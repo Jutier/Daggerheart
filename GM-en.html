@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>GM Screen by Jutier</title>
+		<link rel="icon" href="https://www.daggerheart.com/wp-content/uploads/2024/08/favicon-256x256-1.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Quicksand:wght@300..700&display=swap">
+		<link rel="stylesheet" href="static/style.css"></style>
+	</head>
+	<body id="body">
+		<div class="hotzone"></div>
+		<div class="floating-menu left-menu">
+			<button id="add-card-btn" onclick="newCard()">✏️</button>
+			<button onclick="toggleDark()">🌗</button>
+		</div>
+		<section class="group main">
+			<div class="inner">
+				<div class="card">
+					<h2>Difficulty</h2>
+					<ul class="dif-list">
+						<li>
+							4%<br>
+							<span class="slopes too-easy">5</span><br>
+						</li>
+						<li>
+							25%<br>
+							<span class="slopes easy">10</span><br>
+						</li>
+						<li>
+							62%<br>
+							<span class="slopes average">15</span><br>
+						</li>
+						<li>
+							90%<br>
+							<span class="slopes hard">20</span><br>
+						</li>
+						<li>
+							100%<br>
+							<span class="slopes too-hard">25</span><br>
+						</li>
+						<li class="dif-crit">
+							Critical<br>
+							8.33%
+						</li>
+					</ul>
+				</div>
+
+				<div class="card">
+					<h2>Rolls</h2>
+					<ul class="desc-list">
+						<li>
+							<h3>Action</h3>
+							Trait -> Difficulty -> (Dis)Advantage -><br>
+							Declare mod. -> Roll Duality -> Add mods -> <span class="hope">H</span>/<span class="fear">F</span><br>
+							<p><span class="crit">Critical</span>: Gain <span class="hope">Hope</span> and clear one <span class="stronger">Stress</span></p>
+						</li>
+						<li>
+							<h3>Reaction</h3>
+							Same as Action, but does not generate <span class="hope">H</span>/<span class="fear">F</span>
+						</li>
+						<li>
+							<h3>Attack</h3>
+							Roll 2d12 +<span class="stronger">Trait</span> against the target's <span class="stronger">Difficulty</span>/<span class="stronger">Evasion</span>
+							<p><span class="crit">Critical</span>: Add max damage potential</p>
+						</li>
+						<li>
+							<h3>Damage</h3>
+							Roll a number of dice equal to your <span class="stronger">Proficiency</span>/<span class="stronger">SpellCast</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2>Character Traits</h2>
+					<ul class="desc-list round">
+						<li><strong>Agility:</strong> Sprint, leap, maneuver</li>
+						<li><strong>Strength:</strong> Lift, Smash, Grapple</li>
+						<li><strong>Finesse:</strong> Control, hide, tinker</li>
+						<li><strong>Instinct:</strong> Perceive, sense, survive</li>
+						<li><strong>Presence:</strong> Charm, perform, deceive</li>
+						<li><strong>Knowledge:</strong> Recall, analyze, comprehend</li>
+					</ul>
+				</div>
+
+				<div class="card">
+					<h2>Armor & Stress</h2>
+					<p>
+						<span class="stronger">Armor</span> can be used, once per hit,<br>
+						to reduce the damage threshold of an attack
+					</p>
+					<p>
+						When your <span class="stronger">Stress</span> is full you become vulnerable,<br>
+						if you were to mark another, you lose one hit point
+					</p>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2>Price Reference</h2>
+					<p style="text-align: center;">100 <strong>Handfulls</strong> = 10 <strong>Bags</strong> = 1 <strong>Chest</strong></p>
+					<table style="margin: 0 auto 1rem auto;">
+						<thead>
+							<tr>
+								<th>Item / Service</th>
+								<th>Cost</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Party meal</td>
+								<td>1 Handfull</td>
+							</tr>
+							<tr>
+								<td>Standard room (/night)</td>
+								<td>1 Handfull</td>
+							</tr>
+							<tr>
+								<td>Luxury room (/night)</td>
+								<td>1 Bag</td>
+							</tr>
+							<tr>
+								<td>Carriage ride</td>
+								<td>2 Handfulls</td>
+							</tr>
+							<tr>
+								<td>Mount (horse, etc.)</td>
+								<td>3 Bags</td>
+							</tr>
+							<tr>
+								<td>Specialized tools</td>
+								<td>3 Handfulls</td>
+							</tr>
+							<tr>
+								<td>Fine clothing</td>
+								<td>3 Handfulls</td>
+							</tr>
+							<tr>
+								<td>Luxury clothing</td>
+								<td>1 Bag</td>
+							</tr>
+							<tr>
+								<td>Tier 1 equipment</td>
+								<td>1 - 5 Handfulls</td>
+							</tr>
+							<tr>
+								<td>Tier 2 equipment</td>
+								<td>1 - 2 Bags</td>
+							</tr>
+							<tr>
+								<td>Tier 3 equipment</td>
+								<td>5 - 10 Bags</td>
+							</tr>
+							<tr>
+								<td>Tier 4 equipment</td>
+								<td>1 - 2 Chests</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+		<section class="group resources">
+			<div class="inner">
+				<div class="card">
+					<h2><span class="hope">Hope</span></h2>
+					<p>
+						Can be obtained on rolls with <span class="hope">Hope</span><br>
+						Each player can hold up to 6
+					</p>
+					<p>Can be spent to:</p>
+					<ul class="desc-list round">
+						<li>Help an ally</li>
+						<li>Use an experience</li>
+						<li>Activate a class feature</li>
+						<li>Tag Team Roll</li>
+					</ul>
+				</div>
+
+				<div class="card">
+					<h2>Teamwork</h2>
+					<ul class="desc-list">
+						<li><strong>Help an Ally:</strong> Spend 1 <span class="hope">Hope</span> and add 1d6 to another player's roll</li>
+						<li>
+							<strong>Group Action:</strong> The leader makes an <span class="stronger">Action</span> roll<br>
+							Others make <span class="stronger">Reaction</span> rolls, granting the leader +1 or -1
+						</li>
+						<li>
+							<strong>Tag Team (Duo):</strong> Once per session. Cost: 3 <span class="hope">Hope</span><br>
+							Both roll <span class="stronger">Action</span> and choose one result<br>
+							(For <span class="hope">H</span>/<span class="fear">F</span> purposes, count as two identical rolls)<br>
+							Both roll <span class="stronger">Damage</span> and sum the results<br>
+							(considered as a single source)
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2><span class="fear">Fear</span> & GM Actions</h2>
+					<p>The GM can gain <span class="fear">Fear</span> from different means (rolls or rests) and hold up to 12</p>
+					<p>Can be used to:</p>
+					<ul>
+						<li>Interrupt players</li>
+						<li>Take additional actions</li>
+						<li>Activate certain effects</li>
+					</ul>
+					<h3 id="m-action">GM Actions</h3>
+					<p>The GM may take narrative actions or spotlight adversaries in the following situations:</p>
+					<ul>
+						<li>Roll with <span class="fear">Fear</span></li>
+						<li>Failed roll</li>
+						<li>Consequences of actions</li>
+						<li>Narrative opportunity</li>
+					</ul>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2>Rest</h2>
+					<p>You may swap your domain cards at no cost</p>
+					<p>Choose two actions, repeating as desired</p>
+
+					<table>
+						<thead>
+							<tr>
+								<th></th>
+								<th>
+									Short<br>
+									Rest
+								</th>
+								<th>
+									Long<br>
+									Rest
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<strong>Repair<br>
+									Armor:</strong>
+								</td>
+								<td>
+									1d4 +<span class="stronger">Tier</span><br>
+									(ally*)
+								</td>
+								<td>
+									All<br>
+									(ally*)
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<strong>Treat<br>
+									Wounds:</strong>
+								</td>
+								<td>
+									1d4 +<span class="stronger">Tier</span><br>
+									(ally*)
+								</td>
+								<td>
+									All<br>
+									(ally*)
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong>Reduce<br>
+									Stress:</strong>
+								</td>
+								<td>
+									1d4 +<span class="stronger">Tier</span><br>
+								</td>
+								<td>
+									All<br>
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Prepare:</strong></td>
+								<td>
+									+1 <span class="hope">Hope</span><br>
+									With ally:<br>
+									+2 each
+								</td>
+								<td>
+									+1 <span class="hope">Hope</span><br>
+									With ally:<br>
+									+2 each
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Project:</strong></td>
+								<td></td>
+								<td>Advance a countdown</td>
+							</tr>
+							<tr>
+								<td><strong>"Cost"</strong> <span class="fear">Fear</span></td>
+								<td>1d4</td>
+								<td>1d4 +players</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+		<section class="group combat">
+			<div class="inner">
+				<div class="card">
+					<h2>Spending <span class="fear">Fear</span> in Encounters</h2>
+					<ul class="desc-list round">
+						<li><strong>Incidental (0-1):</strong> Social or exploration</li>
+						<li><strong>Minor (1-3):</strong> Brief skirmish</li>
+						<li><strong>Standard (2-4):</strong> Impactful situation; Difficult journey</li>
+						<li><strong>Major (4-8):</strong> Large battle with narrative importance</li>
+						<li><strong>Climactic (6-12):</strong> Epic battle; Fate-Sealing</li>
+					</ul>
+				</div>
+				<div class="card">
+					<h2>Conditions</h2>
+					<ul class="desc-list round">
+						<li><strong>Hidden:</strong> Rolls against you have disadvantage</li>
+						<li><strong>Vulnerable:</strong> Enemies have advantage against you</li>
+						<li><strong>Restrained:</strong> Can't move, only act</li>
+					</ul>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2>Combat Actions</h2>
+					<p>There is no set order for players</p>
+					<p>Characters can move freely to a close range</p>
+					<p>Additionally, they may choose to:</p>
+					<ul>
+						<li>Make an attack</li>
+						<li>Take an action</li>
+						<li>Clear an effect</li>
+						<li>Move a greater distance</li>
+					</ul>
+				</div>
+
+				<div class="card">
+					<h2>Death Actions</h2>
+					<ul class="desc-list">
+						<li><strong>Avoid Death:</strong> Unconscious but can be healed</li>
+						<li><strong>Blaze of Glory:</strong> One critical action before dying</li>
+						<li>
+							<strong>Risk It All:</strong> Roll duality<br>
+							<span class="hope">Hope</span>: recover HP and/or clear <span class="stronger">Stress</span><br>
+							<span class="fear">Fear</span>: Death<br>
+							<span class="crit">Critical</span>: Fully recover.
+						</li>
+					</ul>
+					<p><span class="stronger">Scar</span>: Permanently lose 1 <span class="hope">Hope</span></p>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2>Adversary Stat Patterns</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Tier</th>
+								<th>Attack</th>
+								<th>Damage</th>
+								<th>Evasion</th>
+								<th>Threshold</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>1</strong> (Lvl 1)</td>
+								<td>+1</td>
+								<td>
+									1d6 +2<br>
+									1d12 +4
+								</td>
+								<td>11</td>
+								<td>7 / 12</td>
+							</tr>
+							<tr>
+								<td><strong>2</strong> (Lvl 2-4)</td>
+								<td>+2</td>
+								<td>
+									2d6 +3<br>
+									2d12 +4
+								</td>
+								<td>14</td>
+								<td>10 / 20</td>
+							</tr>
+							<tr>
+								<td><strong>3</strong> (Lvl 5-7)</td>
+								<td>+3</td>
+								<td>
+									3d8 +3<br>
+									3d12 +5
+								</td>
+								<td>17</td>
+								<td>20 / 32</td>
+							</tr>
+							<tr>
+								<td><strong>4</strong> (Lvl 8-10)</td>
+								<td>+4</td>
+								<td>
+									4d8 +10<br>
+									4d12 +15
+								</td>
+								<td>20</td>
+								<td>25 / 45</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="card">
+					<h2>Range</h2>
+					<table>
+						<tr>
+							<td><span class="stronger">Very close:</span> 3 meters</td>
+							<td><span class="stronger">Fall Damage:</span> 1d10+3</td>
+						</tr>
+						<tr>
+							<td><span class="stronger">Close:</span> 10 meters</td>
+							<td><span class="stronger">Fall Damage:</span> 1d20+5</td>
+						</tr>
+						<tr>
+							<td><span class="stronger">Far:</span> 30 meters</td>
+							<td><span class="stronger">Fall Damage:</span> 1d100+15</td>
+						</tr>
+						<tr>
+							<td><span class="stronger">Very far:</span> 100 meters</td>
+							<td><span class="stronger">Fall Damage:</span> 1d100+15</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</section>
+		<footer class="print-footer">
+			<span class="stronger">Daggerheart GM Screen</span> <span class="stronger">by Jutier</span>
+		</footer>
+		<script src="static/script.js"></script>
+	</body>
+</html>
