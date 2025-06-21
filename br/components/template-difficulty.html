@@ -1,0 +1,91 @@
+<template>
+	<style>
+		.slopes{
+			display: inline-flex;
+			justify-content: center;
+			width: 4rem;
+			background: linear-gradient(
+				200deg,
+				var(--color-gradient-start),
+				var(--color-gradient-middle),
+				var(--color-gradient-end)
+			);
+			border-radius: 0 0 7px 7px;
+			color: var(--color-dif-number);
+			font-weight: bold;
+			font-size: 1.8rem;
+			align-items: flex-end;
+		}
+		.too-easy{
+			height: 2.2rem;
+			clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+		}
+		.easy{
+			height: 2.3rem;
+			clip-path: polygon(0 0.1rem, 100% 0, 100% 100%, 0 100%);
+		}
+		.average{
+			height: 2.5rem;
+			clip-path: polygon(0 0.2rem, 100% 0, 100% 100%, 0 100%);
+		}
+		.hard{
+			height: 2.8rem;
+			clip-path: polygon(0 0.3rem, 100% 0, 100% 100%, 0 100%);
+		}
+		.too-hard{
+			height: 3.4rem;
+			clip-path: polygon(0 0.6rem, 100% 0, 100% 100%, 0 100%);
+		}
+		.dif-list{
+			margin: 0 auto;
+			padding: 1rem;
+			display: flex;
+			align-items: flex-end;
+			list-style: none;
+			gap: 0.2rem;
+		}
+		.dif-list li{
+			align-items: start;
+			font-size: 0.8rem;
+			text-align: center;
+		}
+		.dif-crit{
+			padding: 1rem;
+			border: 3px solid var(--color-crit);
+			box-shadow: 0 0 0 3px var(--color-hope), 0 0 0 3px var(--color-fear) inset;
+			border-radius: 20px;
+			align-self: center;
+			margin: 0 0 0 1.2rem;
+		}
+	</style>
+	<div>
+		<h2>Dificuldade</h2>
+		<button class="delete-card-btn">×</button>
+		<ul class="dif-list">
+			<li>
+				<span class="slopes too-easy">5</span><br>
+				4.2-<span class="crit">1.4</span>%
+			</li>
+			<li>
+				<span class="slopes easy">10</span><br>
+				25.0-<span class="crit">2.8</span>%
+			</li>
+			<li>
+				<span class="slopes average">15</span><br>
+				61.8-<span class="crit">4.9</span>%
+			</li>
+			<li>
+				<span class="slopes hard">20</span><br>
+				89.6-<span class="crit">6.2</span>%
+			</li>
+			<li>
+				<span class="slopes too-hard">25</span><br>
+				100-<span class="crit">8.3</span>%
+			</li>
+				<li class="dif-crit">
+				Crítico<br>
+				<span class="crit">8.33%</span>
+			</li>
+		</ul>
+	</div>
+</template>

@@ -1,0 +1,122 @@
+<template>
+	<style>
+		.delta-btn{
+			font: inherit;
+			font-weight: bold;
+			font-size: 0.8rem;
+			color: var(--color-text);
+			width: 1.2rem;
+			height: 1.2rem;
+			border-radius: 50%;
+			background: none;
+			cursor: pointer;
+			margin: 0 4px;
+			padding: 0;
+		}
+		.plus{
+			border: 2px solid #A6CB12;
+		}
+		.minus{
+			border: 2px solid #E00543;
+		}
+		.plus:hover{
+			color: #A6CB12;
+		}
+		.minus:hover{
+			color: #E00543;
+		}
+		.cat{
+			font-weight: bold;
+			text-align: center;
+		}
+		.line{
+			display: flex;
+			justify-content: space-between;
+		}
+		h4{
+			margin: 1rem 0 0 0.5rem;
+		}
+		.data{
+			margin: 0.5rem;
+		}
+		::slotted([slot="atk-name"]){
+			font-weight: 600;
+		}
+		::slotted([slot="atk-type"]){
+			font-weight: 300;
+			font-size: 0.8rem;
+			opacity: 0.9;
+		}
+		ul{
+			padding: 0;
+			margin: 0.5rem;
+		}
+		li{
+			list-style: none;
+			max-width: 100%;
+		}
+		.feat-text{
+			white-space: normal;
+			word-break: break-word;
+		}
+		.feat-name{
+			font-weight: bold;
+		}
+		.feat-type{
+			font-weight: bold;
+			font-style: italic;
+		}
+	</style>
+	<div>
+		<h2><slot name="name"></slot></h2>
+		<button class="edit-card-btn">=</button>
+		<button class="delete-card-btn">×</button>
+		<div class="cat">
+			Tier <slot name="tier"></slot> - <slot name="type"></slot>
+		</div>
+		<div class="data">
+			<span class="line">
+				<div class="atk">
+					<slot name="atk-name"></slot>:
+					<slot name="atk-range"></slot> -
+					<slot name="atk-dmg"></slot>
+					<slot name="atk-type"></slot>
+				</div>
+				<div class="thresh">
+					Limiares: <slot name="thresh"></slot>
+				</div>
+			</span>
+			<span class="line">
+				<div class="mod">
+					ATK: +<slot name="atk-mod"></slot>
+				</div>
+				<div class="hp variable">
+					HP:
+					<button class="delta-btn minus" delta-value="-1">-</button>
+					<slot name="hp-val"></slot>
+					/
+					<slot name="hp-max"></slot>
+					<button class="delta-btn plus" delta-value="+1">+</button>
+				</div>
+			</span>
+			<span class="line">
+				<div class="dif">
+					Dificuldade: <slot name="dif"></slot>
+				</div>				
+				<div class="stress variable">
+					Estresse:
+					<button class="delta-btn minus" delta-value="-1">-</button>
+					<slot name="stress-val"></slot>
+					/
+					<slot name="stress-max"></slot>
+					<button class="delta-btn plus" delta-value="+1">+</button>
+				</div>
+			</span>
+		</div>
+		<div class="feat">
+			<h4>Habilidades:</h4>
+			<hr>
+			<ul class="feats"></ul>
+		</div>
+	</div>
+</template>

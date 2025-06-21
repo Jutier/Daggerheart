@@ -1,0 +1,72 @@
+<template>
+	<style>
+		table{
+			margin: 1rem auto;
+			border-collapse: collapse;
+			table-layout: fixed;
+			list-style: none;
+		}
+		th, td{
+			border: 2px solid var(--color-accent-2);
+			padding: 0.5rem;
+			text-align: center;
+		}
+	</style>
+	<div>
+		<h2>Padrões de Estatísticas de Adversários</h2>
+		<button class="delete-card-btn">×</button>
+		<table>
+			<thead>
+				<tr>
+					<th>Tier</th>
+					<th>Ataque</th>
+					<th>Dano</th>
+					<th>Evasão</th>
+					<th>Limiar</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><strong>1</strong> (Lvl 1)</td>
+					<td>+1</td>
+					<td>
+						1d6 +2<br>
+						1d12 +4
+					</td>
+					<td>11</td>
+					<td>7 / 12</td>
+				</tr>
+				<tr>
+					<td><strong>2</strong> (Lvl 2-4)</td>
+					<td>+2</td>
+					<td>
+						2d6 +3<br>
+						2d12 +4
+					</td>
+					<td>14</td>
+					<td>10 / 20</td>
+				</tr>
+				<tr>
+					<td><strong>3</strong> (Lvl 5-7)</td>
+					<td>+3</td>
+					<td>
+						3d8 +3<br>
+						3d12 +5
+					</td>
+					<td>17</td>
+					<td>20 / 32</td>
+				</tr>
+				<tr>
+					<td><strong>4</strong> (Lvl 8-10)</td>
+					<td>+4</td>
+					<td>
+						4d8 +10<br>
+						4d12 +15
+					</td>
+					<td>20</td>
+					<td>25 / 45</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</template>

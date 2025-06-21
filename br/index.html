@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Escudo do Mestre by Jutier</title>
+		<link rel="icon" href="../images/favicon.ico">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Quicksand:wght@300..700&display=swap">
+		<link rel="stylesheet" href="../static/global.css"></link>
+		<link rel="stylesheet" href="../static/common.css"></link>
+		<script src="../static/elements.js"></script>
+		<script src="../static/cards.js"></script>
+	</head>
+	<body id="body">
+		<script src="../static/script.js"></script>
+		<div class="hotzone"></div>
+		<div class="floating-menu">
+			<button onclick="toggleBtns()">🡐<span class="tooltip">Voltar</span></button>
+			<button class="add-card-btn" onclick="newCard('difficulty')">🪜<span class="tooltip">Dificuldade</span></button>
+			<button class="add-card-btn" onclick="newCard('rolls')">🎲<span class="tooltip">Rolagens</span></button>
+			<button class="add-card-btn" onclick="newCard('attributes')">🧬<span class="tooltip">Atributos</span></button>
+			<button class="add-card-btn" onclick="newCard('armrnstrs')">🛡️<span class="tooltip">Armadura & Estresse</span></button>
+			<button class="add-card-btn" onclick="newCard('hope')">🕊️<span class="tooltip">Hope</span></button>
+			<button class="add-card-btn" onclick="newCard('fear')">👻<span class="tooltip">Fear</span></button>
+			<button class="add-card-btn" onclick="newCard('combat')">⚔️<span class="tooltip">Ações de Combate</span></button>
+			<button class="add-card-btn" onclick="newCard('teamwork')">🤝<span class="tooltip">Trabalho em Equipe</span></button>
+			<button class="add-card-btn" onclick="newCard('prices')">💸<span class="tooltip">Preços</span></button>
+			<button class="add-card-btn" onclick="newCard('rest')">🛏️<span class="tooltip">Descanso</span></button>
+			<button class="add-card-btn" onclick="newCard('gmmoves')">🎭<span class="tooltip">Ações do Mestre</span></button>
+			<button class="add-card-btn" onclick="newCard('stats')">📊<span class="tooltip">Estatísticas de Inimigos</span></button>
+			<button class="add-card-btn" onclick="newCard('range')">📏<span class="tooltip">Alcance</span></button>
+			<button class="add-card-btn" onclick="newCard('conditions')">🤕<span class="tooltip">Condições</span></button>
+			<button class="add-card-btn" onclick="newCard('death')">🪦<span class="tooltip">Ações de Morte</span></button>
+		</div>
+		<div class="floating-menu active">
+			<button onclick="toggleBtns()">☰<span class="tooltip">Mais Cards</span></button>
+			<button onclick="toggleDark()">🌗<span class="tooltip">Claro/Escuro</span></button>
+			<button class="add-card-btn" onclick="newCard('image')">🖼️<span class="tooltip">Imagem</span></button>
+			<button class="add-card-btn" onclick="newCard('text')">📝<span class="tooltip">Texto</span></button>
+			<button class="add-card-btn" onclick="newCard('enemy')">🧟<span class="tooltip">Inimigos</span></button>
+			<button onclick="addEmptyPage()">➕<span class="tooltip">Nova Página</span></button>
+		</div>
+		<div id="sections">
+			<section class="group">
+				<div class="inner">
+					<card-difficulty class="card"></card-difficulty>
+
+					<card-rolls class="card"></card-rolls>
+				</div>
+				<div class="inner">
+					<card-hope class="card"></card-hope>
+
+					<card-teamwork class="card"></card-teamwork>
+				</div>
+				<div class="inner">
+					<card-fear class="card"></card-fear>
+					
+					<card-gmmoves class="card"></card-gmmoves>
+				</div>
+			</section>
+			<section class="group">
+				<div class="inner">
+					<card-armrnstrs class="card"></card-armrnstrs>
+
+					<card-attributes class="card"></card-attributes>
+				</div>
+				<div class="inner">
+					<card-rest class="card"></card-rest>
+				</div>
+				<div class="inner">
+					<card-prices class="card"></card-prices>
+				</div>
+			</section>
+			<section class="group">
+				<div class="inner">
+					<card-combat class="card"></card-combat>
+
+					<card-death class="card"></card-death>
+				</div>
+				<div class="inner">
+					<card-range class="card"></card-range>
+
+					<card-conditions class="card"></card-conditions>
+				</div>
+				<div class="inner">
+					<card-stats class="card"></card-stats>
+
+				</div>
+			</section>
+		</div>
+		<form id="enemy-form">
+			<div class="form-row">
+				<fieldset id="form-main-field">
+					<legend><input id="form-enemy-name" name="name" placeholder="Nome" autocomplete="off"></legend>
+					<div>
+						<input id="form-tier" name="tier" type="number" placeholder="Tier" autocomplete="off">
+						<input id="form-enemy-type" name="type" list="enemy-types-list" placeholder="Tipo" autocomplete="off">
+						<datalist id="enemy-types-list">
+							<option value="Bruiser">
+							<option value="Horde">
+							<option value="Leader">
+							<option value="Minion">
+							<option value="Ranged">
+							<option value="Skulk">
+							<option value="Social">
+							<option value="Solo">
+							<option value="Standard">
+							<option value="Support">
+						</datalist>
+						<input id="form-atk-mod" name="atk-mod" type="number" placeholder="ATK" autocomplete="off">
+					</div>
+					<div>
+						<input id="form-dif" name="dif" type="number" placeholder="DIF" autocomplete="off">
+						<input id="form-thresh" name="thresh" placeholder="Limiar" autocomplete="off">
+						<input id="form-hp" name="hp-max" type="number" min="1" placeholder="HP" autocomplete="off">
+						<input id="form-stress" name="stress-max" type="number" min="1" placeholder="Estresse" autocomplete="off">
+					</div>
+				</fieldset>
+				<fieldset id="form-atk-field">
+					<legend>Ataque</legend>
+					<div>
+						<input id="form-atk-name" name="atk-name" placeholder="Nome do ataque" autocomplete="off">
+						<input id="form-atk-dmg" name="atk-dmg" placeholder="Dano" autocomplete="off">
+					</div>
+					<div>
+						<input id="form-atk-range" name="atk-range" placeholder="Alcance" autocomplete="off">
+						<input id="form-atk-type" name="atk-type" list="atk-type-list" placeholder="Tipo" autocomplete="off">
+						<datalist id="atk-type-list">
+							<option value="Físico">
+							<option value="Mágico">
+						</datalist>
+					</div>
+				</fieldset>
+			</div>
+			<fieldset>
+				<legend>Habilidades:</legend>
+				<div id="feats-container"></div>
+			</fieldset>
+			<div id="form-buttons">
+				<button type="button" id="add-feat" onclick="addFormFeat('', '', '')">+ Habilidade</button>
+				<button type="submit" id="form-submit">Confirmar</button>
+				<button type="button" id="form-cancel">Cancelar</button>
+			</div>
+			<script>
+				// Here to keep translations out of static files
+				function addFormFeat(featName, featType, featText) {
+					const div = document.createElement('div');
+					div.className = 'feat-fields';
+					div.innerHTML = `
+					<input class="form-feat-name" name="feat-name" value="${featName}" autocomplete="off" placeholder="Habilidade" style="min-width: 8rem;">
+					<input class="form-feat-type" name="feat-type" value="${featType}" autocomplete="off" placeholder="Tipo" style="min-width: 4rem;">
+					<input class="form-feat-text" name="feat-text" value="${featText}" autocomplete="off" placeholder="Descrição">
+				`;
+					featsContainer.appendChild(div);
+				};
+			</script>
+		</form>
+		<script src="../static/form.js"></script>
+		<footer class="print-footer">
+			<strong>Daggerheart GM Screen</strong> <strong>by Jutier</strong>
+		</footer>
+	</body>
+</html>

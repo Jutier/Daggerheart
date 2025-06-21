@@ -1,0 +1,26 @@
+<template>
+	<style>
+		ul{
+			list-style: none;
+			padding-left: 0;
+			margin: 1rem 1rem;
+		}
+		li{
+			padding: 0.5rem;
+			margin: 0.5rem 0;
+			border-left: 4px solid var(--color-accent-1);
+			background: var(--color-li-bg);
+			border-radius: 100px;
+			border-color: var(--color-accent-2);
+		}
+	</style>
+	<div>
+		<h2>Condições</h2>
+		<button class="delete-card-btn">×</button>
+		<ul>
+			<li><strong>Escondido:</strong> Rolagens contra você têm desvantagem</li>
+			<li><strong>Vulnerável:</strong> Inimigos têm vantagem contra você</li>
+			<li><strong>Restringido:</strong> Não pode se mover, apenas agir</li>
+		</ul>
+	</div>
+</template>

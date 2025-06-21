@@ -1,0 +1,103 @@
+<template>
+	<style>
+		table{
+			margin: 1rem auto;
+			border-collapse: collapse;
+			table-layout: fixed;
+			list-style: none;
+		}
+		th, td{
+			border: 2px solid var(--color-accent-2);
+			padding: 0.5rem;
+			text-align: center;
+		}
+	</style>
+	<div>
+		<h2>Descanso</h2>
+		<button class="delete-card-btn">×</button>
+		<p>Podem trocar suas cartas de domínio sem custo</p>
+		<p>Escolhe duas ações, podendo repetir</p>
+
+		<table>
+			<thead>
+				<tr>
+					<th>Ação</th>
+					<th>
+						Descanso<br>
+						Curto
+					</th>
+					<th>
+						Descanso<br>
+						Longo
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<strong>Reparar<br>
+						Armadura:</strong>
+					</td>
+					<td>
+						1d4 +<em>Tier</em><br>
+						(aliado*)
+					</td>
+					<td>
+						Toda<br>
+						(aliado*)
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<strong>Tratar<br>
+						Ferimentos:</strong>
+					</td>
+					<td>
+						1d4 +<em>Tier</em><br>
+						(aliado*)
+					</td>
+					<td>
+						Toda<br>
+						(aliado*)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Reduzir<br>
+						Estresse:</strong>
+					</td>
+					<td>
+						1d4 +<em>Tier</em><br>
+					</td>
+					<td>
+						Toda<br>
+					</td>
+				</tr>
+				<tr>
+					<td><strong>Preparar-se:</strong></td>
+					<td>
+						+1 <span class="hope">Hope</span><br>
+						Em grupo:<br>
+						+2 cada
+					</td>
+					<td>
+						+1 <span class="hope">Hope</span><br>
+						Em grupo:<br>
+						+2 cada
+					</td>
+				</tr>
+				<tr>
+					<td><strong>Projeto:</strong></td>
+					<td></td>
+					<td>Avança um contador</td>
+				</tr>
+				<tr>
+					<td><strong>"Custo"</strong> <span class="fear">Fear</span></td>
+					<td>1d4</td>
+					<td>1d4 +jogadores</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</template>
