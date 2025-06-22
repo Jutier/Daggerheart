@@ -1,0 +1,65 @@
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>GM Screen by Jutier</title>
+		<link rel="icon" href="images/favicon.ico">
+		<link href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" rel="stylesheet" />
+		<style>
+			body{
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font-family: Trebuchet MS, sans-serif;
+				background-image: url('images/background.jpg');
+			}
+			.lang-buttons{
+				display: flex;
+				gap: 2rem;
+			}
+			a{
+				position: relative;
+				text-decoration: none;
+				font-size: 32px;
+				font-weight: bold;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: 15rem;
+				height: 15rem;
+				color: #eeeeee;
+				border-radius: 20px;
+				border: 4px solid #e6925c;
+				background: #10101070;
+				overflow: hidden;
+			}
+			a::before{
+				content: '';
+				position: absolute;
+				inset: 0;
+				background: linear-gradient(
+					200deg,
+					#60d7c3,
+					#1679c5,
+					#263197
+				);
+				opacity: 0;
+				transition: opacity 0.4s;
+				z-index: 0;
+			}
+			a:hover::before{
+				opacity: 1;
+			}
+			a span{
+				position: relative;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="lang-buttons">
+			<a href="./en"><span><img src="https://flagcdn.com/w40/us.png" alt="USA flag" /> English</span></a>
+			<a href="./br"><span><img src="https://flagcdn.com/w40/br.png" alt="Brazil flag" /> Português</span></a>
+		</div>
+	</body>
+</html>
