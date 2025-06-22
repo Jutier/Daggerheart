@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>GM Screen by Jutier</title>
+		<link rel="icon" href="https://www.daggerheart.com/wp-content/uploads/2024/08/favicon-256x256-1.png">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Quicksand:wght@300..700&display=swap">
+		<style>
+			/* Document */
+				:root {
+					--color-text: #212121;
+					--color-card-bg: #e6e6e6;
+					--color-li-bg: #dddddd;
+					--color-alpha: rgba(0, 0, 0, 0.5);
+					--color-gradient-start: #60d7c3;
+					--color-gradient-middle: #1679c5;
+					--color-gradient-end: #263197;
+					--color-fear: #985eee;
+					--color-hope: #f7d951;
+					--color-crit: #e07a36;
+					--color-card-title: #825837;
+					--color-accent-1: #4d3ead;
+					--color-accent-2: #1f89d1;
+					--color-main-line: #5878ed;
+					--color-resources-line: #94e64e;
+					--color-combat-line: #e6604e;
+				}
+				.dark-mode{
+					--color-text: #dedede;
+					--color-card-bg: #1a1a1a;
+					--color-li-bg: #2a2a2a;
+					--color-alpha: rgba(0, 0, 0, 0.5);
+					--color-gradient-start: #60d7c3;
+					--color-gradient-middle: #1679c5;
+					--color-gradient-end: #263197;
+					--color-fear: #985eee;
+					--color-hope: #f7d951;
+					--color-crit: #e07a36;
+					--color-card-title: #6fc7ed;
+					--color-accent-1: #57412c;
+					--color-accent-2: #f6eb51;
+					--color-main-line: #5878ed;
+					--color-resources-line: #94e64e;
+					--color-combat-line: #e6604e;
+				}
+				html{
+					font-size: clamp(14px, 1.05vw, 40px);
+					overflow: hidden;
+				}
+				body{
+				/* Font*/
+					font-family: "Quicksand", sans-serif;
+					font-style: normal;
+					color: var(--color-text);
+				/* Alignment */
+					height: 100vh;
+					display: flex;
+					flex-wrap: wrap;
+					align-items: flex-start;
+					margin: 0;
+				/* Background */
+					background-color: var(--color-alpha);
+					background-image: url(https://www.enworld.org/attachments/daggerheart-2-jpg.406132/);
+					background-position: center bottom;
+					background-size: cover;
+					background-attachment: fixed;
+				/* Scroll Snap */
+					overflow-y: scroll;
+					scroll-snap-type: y proximity;
+					overscroll-behavior-y: contain;
+				}
+				::-webkit-scrollbar{
+					display: none;
+				}
+				.print-footer{
+					display: none;
+					width: calc(100vw - 4rem);
+					height: 1.5rem;
+					position: fixed;
+					background-color: var(--color-fear);
+					color: var(--color-hope);
+					font-size: 1rem;
+					justify-content: space-between;
+					padding: 0 2rem;
+					bottom: 0;
+					z-index: 100;
+				}
+
+
+			/* Menu */
+				.hotzone{
+					position: fixed;
+					top: 0;
+					left: 0;
+					width: 1rem;
+					height: 100vh;
+				}
+				.floating-menu{
+					position: fixed;
+					left: -50px;
+					top: 50%;
+					transform: translateY(-50%);
+					opacity: 0;
+					transition: left 0.35s cubic-bezier(.3,.95,.59,1.18), opacity 0.2s;
+					background: var(--color-alpha);
+					box-shadow: 0 0 0 0 var(--color-fear);
+					padding: 0.5em;
+					border-radius: 0 10px 10px 0;
+					display: flex;
+					flex-direction: column;
+					gap: 0.3em;
+					pointer-events: none;
+				}
+				.hotzone:hover ~ .floating-menu, .floating-menu:hover{
+					left: -5px;
+					opacity: 0.8;
+					pointer-events: auto;
+				}
+				.floating-menu button{
+					height: 2rem;
+					width: 2rem;
+					padding: 0;
+					border-radius: 2rem;
+					background: var(--color-fear);
+					color: var(--color-hope);
+					border: none;
+					margin: 0;
+					font-size: 1rem;
+					cursor: pointer;
+					transition: background 0.2s;
+				}
+				.floating-menu.left-menu button:hover{
+					background: var(--color-hope);
+					color: var(--color-fear);
+				}
+
+
+			/* Resources */
+				.hope, .fear{
+					color: var(--color-alpha);
+					padding: 0 5px;
+					font-weight: 600;
+					border-radius: 15px;
+				}
+				.hope{
+					background-color: var(--color-hope);
+
+				}
+				.fear{
+					background-color: var(--color-fear);
+				}
+				.crit{
+					font-weight: 600;
+					color: var(--color-crit);
+				}
+				.stronger{
+					font-weight: 600;
+				}
+
+
+			/* Difficulty */
+				.slopes{
+					display: inline-flex;
+					flex-direction: column;
+					justify-content: center;
+					width: 4rem;
+					background: linear-gradient(
+						200deg,
+						var(--color-gradient-start),
+						var(--color-gradient-middle),
+						var(--color-gradient-end)
+					);
+					border-radius: 0 0 7px 7px;
+					color: white;
+					font-weight: bold;
+					font-size: 1.8rem;
+				}
+				.too-easy{
+					height: 2.694rem;
+					clip-path: polygon(0% 0.51rem, 100% 0.3rem, 100% 100%, 0% 100%);
+				}
+				.easy{
+					height: 2.694rem;
+					clip-path: polygon(0% 0.3rem, 100% 0%, 100% 100%, 0% 100%);
+				}
+				.average{
+					height: 3.13rem;
+					clip-path: polygon(0% 0.437rem, 100% 0%, 100% 100%, 0% 100%);
+				}
+				.hard{
+					height: 3.641rem;
+					clip-path: polygon(0% 0.509rem, 100% 0%, 100% 100%, 0% 100%);
+				}
+				.too-hard{
+					height: 4.367rem;
+					clip-path: polygon(0% 0.728rem, 100% 0%, 100% 100%, 0% 100%);
+				}
+				.dif-list{
+					margin: 0 auto;
+					padding: 1rem;
+					display: flex;
+					align-items: flex-end;
+					list-style: none;
+					gap: 0.2rem;
+				}
+				.dif-list li{
+					text-align: center;
+				}
+				.dif-crit{
+					padding: 1rem;
+					border: 3px solid var(--color-crit);
+					box-shadow: 0 0 0 3px var(--color-hope), 0 0 0 3px var(--color-fear) inset;
+					border-radius: 20px;
+					align-self: center;
+					margin: 0 0 0 1.2rem;
+				}
+
+
+			/* Elements */
+				p{
+					margin: 0.5rem;
+				}
+				.card{
+					width: 30rem;
+					border: 3px solid var(--color-accent-1);
+					border-radius: 15px;
+					background-color: var(--color-card-bg);
+					box-sizing: border-box;
+					margin: 0rem;
+				}	
+				.card h2{
+					color: var(--color-card-title);
+					font-family: "Faculty Glyphic", sans-serif;
+					font-weight: 700;
+					padding: 0.5rem 0 0.5rem 1rem;
+					margin: 0;
+				}
+				h3#m-action{
+					margin: 0 0 0 .5rem;
+				}
+
+
+			/* Table */
+				table{
+					margin: 1rem auto;
+						border-collapse: collapse;
+						table-layout: fixed;
+					list-style: none;
+
+				}
+				th, td{
+					border: 2px solid var(--color-accent-2);
+					padding: 0.5rem;
+				}
+				li p{
+					margin: 0.5rem 0 0 0;
+				}
+
+
+			/* Lists */
+				.desc-list{
+					list-style: none;
+					padding-left: 0;
+					margin: 1rem 1rem;
+				}
+				.desc-list li{
+					padding: 0.5rem;
+					margin: 0.5rem 0;
+					border-left: 4px solid var(--color-accent-1);
+					background: var(--color-li-bg);
+					border-radius: 10px;
+				}
+				.desc-list li h3{
+					margin: 0 0 0 0;
+				}
+				.round li{
+					border-radius: 100px;
+					border-color: var(--color-accent-2);
+				}
+
+
+			/* Inputs */
+				.card textarea{
+					width: 100%;
+					min-height: 3rem;
+					resize: vertical;
+					background: inherit;
+					color: inherit;
+					border: none;
+					outline: none;
+					font-size: 1rem;
+					padding: 0.3rem;
+					margin: 0;
+					box-sizing: border-box;
+					border-radius: 10px;
+				}
+
+
+			/* Groups */
+				.group {
+					display: flex;
+					justify-content: space-between;
+					width: 100vw;
+					scroll-snap-align: start;
+					overflow: hidden;
+				}
+				.inner {
+					margin: 0.5rem;
+					display: flex;
+					height: calc(100vh - 1rem);
+					flex-direction: column;
+					justify-content: space-between;
+				}
+				.main div .card h2{
+					border-bottom: 3px solid var(--color-main-line);
+				}
+				.resources div .card h2{
+					border-bottom: 3px solid var(--color-resources-line);
+				}
+				.combat div .card h2{
+					border-bottom: 3px solid var(--color-combat-line);
+				}
+
+
+			/* Mobile */
+				@media (max-width: 600px){
+					html{
+						font-size: clamp(12px, 3.333vw, 40px);
+						overflow: visible;
+					}
+					body{
+						display: block;
+					}
+					.group{
+						display: block;
+					}
+					.inner{
+						margin: 0;
+						display: block;
+						height: inherit;
+					}
+					.card{
+						margin: 1rem 0;
+					}
+				}
+
+
+			/* Print */
+				@media print{
+					@page{
+						size: 1920px 1080px;
+					}
+					html{
+						overflow: visible;
+					}
+					.group{
+						width: 100vw;
+					}
+					.inner{
+						padding-bottom: 1.2rem;
+						box-sizing: border-box;
+					}
+					.card{
+						margin: 0rem;
+					}
+					.print-footer{
+						display: flex;
+					}
+					.hotzone, .floating-menu{
+						display: none !important;
+						pointer-events: none !important;
+					}
+				}
+		</style>
+	</head>
+	<body id="body">
+		<div class="hotzone"></div>
+		<div class="floating-menu left-menu">
+			<button id="add-card-btn" onclick="newCard()">✏️</button>
+			<button onclick="toggleDark()">🌗</button>
+		</div>
+		<section class="group main">
+			<div class="inner">
+				<div class="card">
+					<h2>Difficulty</h2>
+					<ul class="dif-list">
+						<li>
+							4%<br>
+							<span class="slopes too-easy">5</span><br>
+						</li>
+						<li>
+							25%<br>
+							<span class="slopes easy">10</span><br>
+						</li>
+						<li>
+							62%<br>
+							<span class="slopes average">15</span><br>
+						</li>
+						<li>
+							90%<br>
+							<span class="slopes hard">20</span><br>
+						</li>
+						<li>
+							100%<br>
+							<span class="slopes too-hard">25</span><br>
+						</li>
+						<li class="dif-crit">
+							Critical<br>
+							8.33%
+						</li>
+					</ul>
+				</div>
+
+				<div class="card">
+					<h2>Rolls</h2>
+					<ul class="desc-list">
+						<li>
+							<h3>Action</h3>
+							Trait -> Difficulty -> (Dis)Advantage -><br>
+							Declare mod. -> Roll Duality -> Add mods -> <span class="hope">H</span>/<span class="fear">F</span><br>
+							<p><span class="crit">Critical</span>: Gain <span class="hope">Hope</span> and clear one <span class="stronger">Stress</span></p>
+						</li>
+						<li>
+							<h3>Reaction</h3>
+							Same as Action, but does not generate <span class="hope">H</span>/<span class="fear">F</span>
+						</li>
+						<li>
+							<h3>Attack</h3>
+							Roll 2d12 +<span class="stronger">Trait</span> against the target's <span class="stronger">Difficulty</span>/<span class="stronger">Evasion</span>
+							<p><span class="crit">Critical</span>: Add max damage potential</p>
+						</li>
+						<li>
+							<h3>Damage</h3>
+							Roll a number of dice equal to your <span class="stronger">Proficiency</span>/<span class="stronger">SpellCast</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2>Character Traits</h2>
+					<ul class="desc-list round">
+						<li><strong>Agility:</strong> Sprint, leap, maneuver</li>
+						<li><strong>Strength:</strong> Lift, Smash, Grapple</li>
+						<li><strong>Finesse:</strong> Control, hide, tinker</li>
+						<li><strong>Instinct:</strong> Perceive, sense, survive</li>
+						<li><strong>Presence:</strong> Charm, perform, deceive</li>
+						<li><strong>Knowledge:</strong> Recall, analyze, comprehend</li>
+					</ul>
+				</div>
+
+				<div class="card">
+					<h2>Armor & Stress</h2>
+					<p>
+						<span class="stronger">Armor</span> can be used, once per hit,<br>
+						to reduce the damage threshold of an attack
+					</p>
+					<p>
+						When your <span class="stronger">Stress</span> is full you become vulnerable,<br>
+						if you were to mark another, you lose one hit point
+					</p>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2>Price Reference</h2>
+					<p style="text-align: center;">100 <strong>Handfulls</strong> = 10 <strong>Bags</strong> = 1 <strong>Chest</strong></p>
+					<table style="margin: 0 auto 1rem auto;">
+						<thead>
+							<tr>
+								<th>Item / Service</th>
+								<th>Cost</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Party meal</td>
+								<td>1 Handfull</td>
+							</tr>
+							<tr>
+								<td>Standard room (/night)</td>
+								<td>1 Handfull</td>
+							</tr>
+							<tr>
+								<td>Luxury room (/night)</td>
+								<td>1 Bag</td>
+							</tr>
+							<tr>
+								<td>Carriage ride</td>
+								<td>2 Handfulls</td>
+							</tr>
+							<tr>
+								<td>Mount (horse, etc.)</td>
+								<td>3 Bags</td>
+							</tr>
+							<tr>
+								<td>Specialized tools</td>
+								<td>3 Handfulls</td>
+							</tr>
+							<tr>
+								<td>Fine clothing</td>
+								<td>3 Handfulls</td>
+							</tr>
+							<tr>
+								<td>Luxury clothing</td>
+								<td>1 Bag</td>
+							</tr>
+							<tr>
+								<td>Tier 1 equipment</td>
+								<td>1 - 5 Handfulls</td>
+							</tr>
+							<tr>
+								<td>Tier 2 equipment</td>
+								<td>1 - 2 Bags</td>
+							</tr>
+							<tr>
+								<td>Tier 3 equipment</td>
+								<td>5 - 10 Bags</td>
+							</tr>
+							<tr>
+								<td>Tier 4 equipment</td>
+								<td>1 - 2 Chests</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+		<section class="group resources">
+			<div class="inner">
+				<div class="card">
+					<h2><span class="hope">Hope</span></h2>
+					<p>
+						Can be obtained on rolls with <span class="hope">Hope</span><br>
+						Each player can hold up to 6
+					</p>
+					<p>Can be spent to:</p>
+					<ul class="desc-list round">
+						<li>Help an ally</li>
+						<li>Use an experience</li>
+						<li>Activate a class feature</li>
+						<li>Tag Team Roll</li>
+					</ul>
+				</div>
+
+				<div class="card">
+					<h2>Teamwork</h2>
+					<ul class="desc-list">
+						<li><strong>Help an Ally:</strong> Spend 1 <span class="hope">Hope</span> and add 1d6 to another player's roll</li>
+						<li>
+							<strong>Group Action:</strong> The leader makes an <span class="stronger">Action</span> roll<br>
+							Others make <span class="stronger">Reaction</span> rolls, granting the leader +1 or -1
+						</li>
+						<li>
+							<strong>Tag Team (Duo):</strong> Once per session. Cost: 3 <span class="hope">Hope</span><br>
+							Both roll <span class="stronger">Action</span> and choose one result<br>
+							(For <span class="hope">H</span>/<span class="fear">F</span> purposes, count as two identical rolls)<br>
+							Both roll <span class="stronger">Damage</span> and sum the results<br>
+							(considered as a single source)
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2><span class="fear">Fear</span> & GM Actions</h2>
+					<p>The GM can gain <span class="fear">Fear</span> from different means (rolls or rests) and hold up to 12</p>
+					<p>Can be used to:</p>
+					<ul>
+						<li>Interrupt players</li>
+						<li>Take additional actions</li>
+						<li>Activate certain effects</li>
+					</ul>
+					<h3 id="m-action">GM Actions</h3>
+					<p>The GM may take narrative actions or spotlight adversaries in the following situations:</p>
+					<ul>
+						<li>Roll with <span class="fear">Fear</span></li>
+						<li>Failed roll</li>
+						<li>Consequences of actions</li>
+						<li>Narrative opportunity</li>
+					</ul>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2>Rest</h2>
+					<p>You may swap your domain cards at no cost</p>
+					<p>Choose two actions, repeating as desired</p>
+
+					<table>
+						<thead>
+							<tr>
+								<th></th>
+								<th>
+									Short<br>
+									Rest
+								</th>
+								<th>
+									Long<br>
+									Rest
+								</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<strong>Repair<br>
+									Armor:</strong>
+								</td>
+								<td>
+									1d4 +<span class="stronger">Tier</span><br>
+									(ally*)
+								</td>
+								<td>
+									All<br>
+									(ally*)
+								</td>
+							</tr>
+
+							<tr>
+								<td>
+									<strong>Treat<br>
+									Wounds:</strong>
+								</td>
+								<td>
+									1d4 +<span class="stronger">Tier</span><br>
+									(ally*)
+								</td>
+								<td>
+									All<br>
+									(ally*)
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<strong>Reduce<br>
+									Stress:</strong>
+								</td>
+								<td>
+									1d4 +<span class="stronger">Tier</span><br>
+								</td>
+								<td>
+									All<br>
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Prepare:</strong></td>
+								<td>
+									+1 <span class="hope">Hope</span><br>
+									With ally:<br>
+									+2 each
+								</td>
+								<td>
+									+1 <span class="hope">Hope</span><br>
+									With ally:<br>
+									+2 each
+								</td>
+							</tr>
+							<tr>
+								<td><strong>Project:</strong></td>
+								<td></td>
+								<td>Advance a countdown</td>
+							</tr>
+							<tr>
+								<td><strong>"Cost"</strong> <span class="fear">Fear</span></td>
+								<td>1d4</td>
+								<td>1d4 +players</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</section>
+		<section class="group combat">
+			<div class="inner">
+				<div class="card">
+					<h2>Spending <span class="fear">Fear</span> in Encounters</h2>
+					<ul class="desc-list round">
+						<li><strong>Incidental (0-1):</strong> Social or exploration</li>
+						<li><strong>Minor (1-3):</strong> Brief skirmish</li>
+						<li><strong>Standard (2-4):</strong> Impactful situation; Difficult journey</li>
+						<li><strong>Major (4-8):</strong> Large battle with narrative importance</li>
+						<li><strong>Climactic (6-12):</strong> Epic battle; Fate-Sealing</li>
+					</ul>
+				</div>
+				<div class="card">
+					<h2>Conditions</h2>
+					<ul class="desc-list round">
+						<li><strong>Hidden:</strong> Rolls against you have disadvantage</li>
+						<li><strong>Vulnerable:</strong> Enemies have advantage against you</li>
+						<li><strong>Restrained:</strong> Can't move, only act</li>
+					</ul>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2>Combat Actions</h2>
+					<p>There is no set order for players</p>
+					<p>Characters can move freely to a close range</p>
+					<p>Additionally, they may choose to:</p>
+					<ul>
+						<li>Make an attack</li>
+						<li>Take an action</li>
+						<li>Clear an effect</li>
+						<li>Move a greater distance</li>
+					</ul>
+				</div>
+
+				<div class="card">
+					<h2>Death Actions</h2>
+					<ul class="desc-list">
+						<li><strong>Avoid Death:</strong> Unconscious but can be healed</li>
+						<li><strong>Blaze of Glory:</strong> One critical action before dying</li>
+						<li>
+							<strong>Risk It All:</strong> Roll duality<br>
+							<span class="hope">Hope</span>: recover HP and/or clear <span class="stronger">Stress</span><br>
+							<span class="fear">Fear</span>: Death<br>
+							<span class="crit">Critical</span>: Fully recover.
+						</li>
+					</ul>
+					<p><span class="stronger">Scar</span>: Permanently lose 1 <span class="hope">Hope</span></p>
+				</div>
+			</div>
+			<div class="inner">
+				<div class="card">
+					<h2>Adversary Stat Patterns</h2>
+					<table>
+						<thead>
+							<tr>
+								<th>Tier</th>
+								<th>Attack</th>
+								<th>Damage</th>
+								<th>Evasion</th>
+								<th>Threshold</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><strong>1</strong> (Lvl 1)</td>
+								<td>+1</td>
+								<td>
+									1d6 +2<br>
+									1d12 +4
+								</td>
+								<td>11</td>
+								<td>7 / 12</td>
+							</tr>
+							<tr>
+								<td><strong>2</strong> (Lvl 2-4)</td>
+								<td>+2</td>
+								<td>
+									2d6 +3<br>
+									2d12 +4
+								</td>
+								<td>14</td>
+								<td>10 / 20</td>
+							</tr>
+							<tr>
+								<td><strong>3</strong> (Lvl 5-7)</td>
+								<td>+3</td>
+								<td>
+									3d8 +3<br>
+									3d12 +5
+								</td>
+								<td>17</td>
+								<td>20 / 32</td>
+							</tr>
+							<tr>
+								<td><strong>4</strong> (Lvl 8-10)</td>
+								<td>+4</td>
+								<td>
+									4d8 +10<br>
+									4d12 +15
+								</td>
+								<td>20</td>
+								<td>25 / 45</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+
+				<div class="card">
+					<h2>Range</h2>
+					<table>
+						<tr>
+							<td><span class="stronger">Very close:</span> 3 meters</td>
+							<td><span class="stronger">Fall Damage:</span> 1d10+3</td>
+						</tr>
+						<tr>
+							<td><span class="stronger">Close:</span> 10 meters</td>
+							<td><span class="stronger">Fall Damage:</span> 1d20+5</td>
+						</tr>
+						<tr>
+							<td><span class="stronger">Far:</span> 30 meters</td>
+							<td><span class="stronger">Fall Damage:</span> 1d100+15</td>
+						</tr>
+						<tr>
+							<td><span class="stronger">Very far:</span> 100 meters</td>
+							<td><span class="stronger">Fall Damage:</span> 1d100+15</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</section>
+		<footer class="print-footer">
+			<span class="stronger">Daggerheart GM Screen</span> <span class="stronger">by Jutier</span>
+		</footer>
+		<script>
+			const body = document.getElementById("body");
+			const sysDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			const localPref = localStorage.getItem("theme");
+
+			function toggleDark() {
+				const isDark = body.classList.toggle("dark-mode");
+				localStorage.setItem("theme", isDark ? "dark" : "light")
+			};
+
+			const goDark = localPref ? localPref === "dark" : sysDark;
+
+			if (goDark) {
+				toggleDark();
+			}
+
+			function newCard() {
+				function handlePageClick(event) {
+					// Catch miss-click
+					if (event.target.closest('#add-card-btn')) return;
+
+					// Find .inner
+					let target = event.target;
+					let inner;
+					while (target && target !== document.body) {
+						if (target.classList.contains('inner')) {
+							inner = target;
+							break;
+						}
+						target = target.parentElement;
+					}
+					// .inner not found
+					if (!inner) {
+						document.removeEventListener('click', handlePageClick);
+						return;
+					}
+
+					// Determines relative position within .inner
+					const cards = Array.from(inner.children);
+					let closestChild = null;
+					let minDist = Infinity;
+					cards.forEach(child => {
+						const rect = child.getBoundingClientRect();
+						const centerX = rect.left + rect.width / 2;
+						const centerY = rect.top + rect.height / 2;
+						const dx = event.clientX - centerX;
+						const dy = event.clientY - centerY;
+						const dist = Math.sqrt(dx * dx + dy * dy);
+						if (dist < minDist) {
+							minDist = dist;
+							closestChild = child;
+						}
+					});
+
+					// .card element
+					const card = document.createElement('div');
+					card.className = 'card';
+					const input = document.createElement('textarea');
+					input.type = 'text';
+					input.placeholder = '...';
+					card.appendChild(input);
+
+					if (closestChild) {
+						const rect = closestChild.getBoundingClientRect();
+						if (event.clientY < rect.top + rect.height / 2) {
+							inner.insertBefore(card, closestChild);
+						} else {
+							inner.insertBefore(card, closestChild.nextSibling);
+						}
+					} else {
+						// Empty .inner
+						inner.appendChild(card);
+					}
+					document.removeEventListener('click', handlePageClick);
+				}
+				document.addEventListener('click', handlePageClick);
+			}
+		</script>
+	</body>
+</html>
