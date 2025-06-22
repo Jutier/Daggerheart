@@ -15,7 +15,9 @@
 	</head>
 	<body id="body">
 		<script src="../static/script.js"></script>
-		<div class="hotzone"></div>
+		<div class="hotzone">
+			<div class="hotzone-arrow"><strong>&#10151</strong></div>
+		</div>
 		<div class="floating-menu">
 			<button onclick="toggleBtns()">🡐<span class="tooltip">Voltar</span></button>
 			<button class="add-card-btn" onclick="newCard('difficulty')">🪜<span class="tooltip">Dificuldade</span></button>
@@ -46,24 +48,20 @@
 			<section class="group">
 				<div class="inner">
 					<card-difficulty class="card"></card-difficulty>
-
 					<card-rolls class="card"></card-rolls>
 				</div>
 				<div class="inner">
 					<card-hope class="card"></card-hope>
-
 					<card-teamwork class="card"></card-teamwork>
 				</div>
 				<div class="inner">
 					<card-fear class="card"></card-fear>
-					
 					<card-gmmoves class="card"></card-gmmoves>
 				</div>
 			</section>
 			<section class="group">
 				<div class="inner">
 					<card-armrnstrs class="card"></card-armrnstrs>
-
 					<card-attributes class="card"></card-attributes>
 				</div>
 				<div class="inner">
@@ -76,17 +74,14 @@
 			<section class="group">
 				<div class="inner">
 					<card-combat class="card"></card-combat>
-
 					<card-death class="card"></card-death>
 				</div>
 				<div class="inner">
 					<card-range class="card"></card-range>
-
 					<card-conditions class="card"></card-conditions>
 				</div>
 				<div class="inner">
 					<card-stats class="card"></card-stats>
-
 				</div>
 			</section>
 		</div>
