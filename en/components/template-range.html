@@ -1,0 +1,45 @@
+<template>
+	<style>
+		table{
+			margin: 1rem auto;
+			border-collapse: collapse;
+			table-layout: fixed;
+			list-style: none;
+		}
+		th, td{
+			border: 2px solid var(--color-accent-2);
+			padding: 0.5rem;
+			text-align: center;
+		}
+	</style>
+	<div>
+		<h2>Range</h2>
+		<button class="delete-card-btn">×</button>
+		<table>
+			<thead>
+				<tr>
+					<th>Distance</th>
+					<th>Fall Damage</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><strong>Very Close:</strong> up to 10 feet</td>
+					<td>1d10 +3</td>
+				</tr>
+				<tr>
+					<td><strong>Close:</strong> up to 30 feet</td>
+					<td>1d20 +5</td>
+				</tr>
+				<tr>
+					<td><strong>Far:</strong> up to 100 feet</td>
+					<td>1d100 +15</td>
+				</tr>
+				<tr>
+					<td><strong>Very Far:</strong> up to 300 feet</td>
+					<td>1d100 +15</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</template>

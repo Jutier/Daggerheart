@@ -1,0 +1,101 @@
+<template>
+	<style>
+		table{
+			margin: 1rem auto;
+			border-collapse: collapse;
+			table-layout: fixed;
+			list-style: none;
+		}
+		th, td{
+			border: 2px solid var(--color-accent-2);
+			padding: 0.5rem;
+			text-align: center;
+		}
+	</style>
+	<div>
+		<h2>Rest</h2>
+		<button class="delete-card-btn">×</button>
+		<p>Players may swap their domain cards with no cost</p>
+		<p>Choose two actions, repetitions allowed</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Action</th>
+					<th>
+						Short<br>
+						Rest
+					</th>
+					<th>
+						Long<br>
+						Rest
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<strong>Repair<br>
+						Armor:</strong>
+					</td>
+					<td>
+						1d4 +<em>Tier</em><br>
+						(ally*)
+					</td>
+					<td>
+						Full<br>
+						(ally*)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Tend to<br>
+						Wounds:</strong>
+					</td>
+					<td>
+						1d4 +<em>Tier</em><br>
+						(ally*)
+					</td>
+					<td>
+						Full<br>
+						(ally*)
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<strong>Clear<br>
+						Stress:</strong>
+					</td>
+					<td>
+						1d4 +<em>Tier</em><br>
+					</td>
+					<td>
+						Full<br>
+					</td>
+				</tr>
+				<tr>
+					<td><strong>Prepare:</strong></td>
+					<td>
+						+1 <span class="hope">Hope</span><br>
+						With an ally:<br>
+						+2 each
+					</td>
+					<td>
+						+1 <span class="hope">Hope</span><br>
+						With an ally:<br>
+						+2 each
+					</td>
+				</tr>
+				<tr>
+					<td><strong>Project:</strong></td>
+					<td></td>
+					<td>Advance a countdown</td>
+				</tr>
+				<tr>
+					<td><strong>"Cost"</strong> <span class="fear">Fear</span></td>
+					<td>1d4</td>
+					<td>1d4 +players</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</template>

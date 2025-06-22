@@ -1,0 +1,84 @@
+<template>
+	<style>
+		.conversion{
+			text-align: center;
+		}
+		table{
+			margin: 0 auto 1rem auto;
+			border-collapse: collapse;
+			table-layout: fixed;
+			list-style: none;
+		}
+		th, td{
+			border: 2px solid var(--color-accent-2);
+			padding: 0.5rem;
+		}
+	</style>
+	<div>
+		<h2>Price Reference</h2>
+		<button class="delete-card-btn">×</button>
+		<p class="conversion" style="text-align: center;">
+			100 <strong>Handfuls</strong>
+			= 10 <strong>Bags</strong>
+			= 1 <strong>Chest</strong>
+		</p>
+		<table>
+			<thead>
+				<tr>
+					<th>Item / Service</th>
+					<th>Cost</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Meals for a party</td>
+					<td>1 Handful</td>
+				</tr>
+				<tr>
+					<td>Standard inn room (/night)</td>
+					<td>1 Handful</td>
+				</tr>
+				<tr>
+					<td>Luxury inn room (/night)</td>
+					<td>1 Bags</td>
+				</tr>
+				<tr>
+					<td>Carriage ride</td>
+					<td>2 Handfuls</td>
+				</tr>
+				<tr>
+					<td>Mount (horse, mule, etc.)</td>
+					<td>3 Bags</td>
+				</tr>
+				<tr>
+					<td>Specialized tools</td>
+					<td>3 Handfuls</td>
+				</tr>
+				<tr>
+					<td>Fine clothing</td>
+					<td>3 Handfuls</td>
+				</tr>
+				<tr>
+					<td>Luxury clothing</td>
+					<td>1 Bags</td>
+				</tr>
+				<tr>
+					<td>Tier 1 equipment</td>
+					<td>1 to 5 Handfuls</td>
+				</tr>
+				<tr>
+					<td>Tier 2 equipment</td>
+					<td>1 to 2 Bags</td>
+				</tr>
+				<tr>
+					<td>Tier 3 equipment</td>
+					<td>5 to 10 Bags</td>
+				</tr>
+				<tr>
+					<td>Tier 4 equipment</td>
+					<td>1 to 2 Chest</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</template>
