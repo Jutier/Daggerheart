@@ -4,33 +4,27 @@
 }
 
 /* Card Buttons */
-.delete-card-btn{
+.card-btn{
 	position: absolute;
 	top: 0.1rem;
-	right: 0.1rem;
 	background: none;
 	border: none;
 	color: #00000080;
 	font-size: 1rem;
 	cursor: pointer;
 	transition: color 0.3s ease;
+}
+.delete-card-btn{
+	right: 0.1rem;
 }
 .delete-card-btn:hover{
 	color: #f6404e;
 }
-.edit-card-btn{
-	position: absolute;
-	top: 0.1rem;
-	right: 1.3rem;
-	background: none;
-	border: none;
-	color: #00000080;
-	font-size: 1rem;
-	cursor: pointer;
-	transition: color 0.3s ease;
-}
 .edit-card-btn:hover{
 	color: #f6a740;
+}
+.info-card-btn:hover{
+	color: #409bf6;
 }
 
 /* Text Flavor */

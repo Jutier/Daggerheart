@@ -1,5 +1,8 @@
 <template>
 	<style>
+		.edit-card-btn{
+			right: 1.3rem;
+		}
 		.delta-btn{
 			font: inherit;
 			font-weight: bold;
@@ -69,8 +72,8 @@
 	</style>
 	<div>
 		<h2><slot name="name"></slot></h2>
-		<button class="edit-card-btn">=</button>
-		<button class="delete-card-btn">×</button>
+		<button class="card-btn edit-card-btn">✎</button>
+		<button class="card-btn delete-card-btn">×</button>
 		<div class="cat">
 			Tier <slot name="tier"></slot> - <slot name="type"></slot>
 		</div>
