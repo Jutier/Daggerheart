@@ -1,5 +1,12 @@
 <template>
 	<style>
+		.info-card-btn{
+			right: 1.2rem;
+		}
+		.card-tooltip{
+			top: -8px;
+			right: 2rem;
+		}
 		.slopes{
 			display: inline-flex;
 			justify-content: center;
@@ -61,6 +68,14 @@
 	<div>
 		<h2>Dificuldade</h2>
 		<button class="card-btn delete-card-btn">×</button>
+		<button class="card-btn info-card-btn">𝒊	</button>
+		<div class="card-tooltip">
+			Dificuldade não é chance de sucesso.<br>
+			A % de cada valor representa:<br>
+			Probabilidade <em>real</em> (menos) <span class="crit">crítico</span><br>
+			Valor <em>prático</em>: <strong>2.8% 22.2% 56.9% 83.4% 91.7%</strong><br>
+			Sucesso <em>prático</em>: <strong>97.2% 77.8% 43.1% 16.6% 8.3%</strong><br>
+		</div>
 		<ul class="dif-list">
 			<li>
 				<span class="slopes too-easy">5</span><br>
@@ -79,7 +94,7 @@
 				89.6-<span class="crit">6.2</span>%
 			</li>
 			<li>
-				<span class="slopes too-hard">25</span><br>
+				<span class="slopes too-hard">25+</span><br>
 				100-<span class="crit">8.3</span>%
 			</li>
 				<li class="dif-crit">

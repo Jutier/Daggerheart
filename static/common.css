@@ -3,8 +3,43 @@
 	transition: background-color 0.4s cubic-bezier(1,0,.6,1), color 0.4s cubic-bezier(1,0,.6,1), border-color 0.4s cubic-bezier(1,0,.6,1);
 }
 
+/* Tooltip */
+.card-tooltip {
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.2s ease-in;
+	position: absolute;
+	top: 0;
+	z-index: 100;
+
+	text-align: center;
+	background-color: var(--color-li-bg);
+	color: var(--color-text);
+	padding: 4px 6px;
+	border-radius: 14px;
+	font-size: 0.75em;
+}
+.card-tooltip::after {
+	content: '';
+	pointer-events: none;
+	position: absolute;
+	top: 14%; /* parte de baixo da tooltip */
+	right: -24px;
+	transform: translateX(-50%);
+	border-width: 8px;
+	border-style: solid;
+	border-color: transparent transparent transparent var(--color-li-bg);
+}
+.info-card-btn:hover + .card-tooltip {
+	opacity: 1;
+	pointer-events: auto;
+	transition-delay: 0.5s; /* <-- Espera 0.5s antes de aparecer */
+
+}
+
 /* Card Buttons */
 .card-btn{
+	padding: 0;
 	position: absolute;
 	top: 0.1rem;
 	background: none;
@@ -15,7 +50,7 @@
 	transition: color 0.3s ease;
 }
 .delete-card-btn{
-	right: 0.1rem;
+	right: 0.3rem;
 }
 .delete-card-btn:hover{
 	color: #f6404e;
