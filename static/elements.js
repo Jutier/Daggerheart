@@ -110,6 +110,34 @@ const cardBehaviors = {
 			}
 		}
 	},
+	feartracker: {
+		bindEvents: (root, element) => {
+			const active = root.querySelector('#fear-active')
+			const inactive = root.querySelector('#fear-inactive')
+			const deltaButtons = root.querySelectorAll('.delta-btn');
+			deltaButtons.forEach(btn => {
+				btn.addEventListener('click', () => {
+					element.changeValue(btn, active, inactive);
+				});
+			});
+		},
+		methods: {
+			changeValue: function (btn, active, inactive) {
+				const delta = Number(btn.getAttribute('delta-value')) || 0;
+				let fearCount = Number(active.getAttribute('fearCount')) || 0;
+
+				fearCount += delta;
+				if (fearCount < 0) fearCount = 0;
+				if (fearCount > 12) fearCount = 12;
+
+				active.setAttribute('fearCount', fearCount);
+
+				active.textContent = '💀'.repeat(fearCount);
+				inactive.textContent = '💀'.repeat(12 - fearCount);
+
+			}
+		}
+	},
 	enemy: {
 		bindEvents: (root, element) => {
 			const edit = root.querySelector('.edit-card-btn');

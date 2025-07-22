@@ -1,0 +1,47 @@
+<template>
+	<style>
+		div{
+			display: flex;
+			padding: 0.3rem;
+			align-items: center;
+		}
+		#fear-active{
+			font-size: 1.5em;
+		}
+		#fear-inactive{
+			font-size: 1.5em;
+			opacity: 0.35;
+		}
+		.delta-btn{
+			font: inherit;
+			font-weight: bold;
+			font-size: 0.8rem;
+			color: var(--color-text);
+			width: 1.2rem;
+			height: 1.2rem;
+			border-radius: 50%;
+			background: none;
+			cursor: pointer;
+			margin: 0 4px;
+			padding: 0;
+		}
+		.plus{
+			border: 2px solid #A6CB12;
+		}
+		.minus{
+			border: 2px solid #E00543;
+		}
+		.plus:hover{
+			color: #A6CB12;
+		}
+		.minus:hover{
+			color: #E00543;
+		}
+	</style>
+	<div>
+		<button class="card-btn delete-card-btn">×</button>
+		<button class="delta-btn minus" delta-value="-1">-</button>
+		<span id="fear-active" fearCount="0"></span><span id="fear-inactive">💀💀💀💀💀💀💀💀💀💀💀💀</span>
+		<button class="delta-btn plus" delta-value="+1">+</button>
+	</div>
+</template>
