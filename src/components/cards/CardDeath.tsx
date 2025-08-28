@@ -8,7 +8,7 @@ function CardDeath() {
 	const { t } = useTranslation();
 
 	return (
-		<Card title={t("cardDeath.title")}>
+		<Card cardTitle={t("cardDeath.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 

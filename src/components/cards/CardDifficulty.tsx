@@ -83,7 +83,7 @@ function CardDifficulty() {
 	const { t } = useTranslation();
 
 	return (
-		<Card title={t("cardDifficulty.title")}>
+		<Card cardTitle={t("cardDifficulty.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 			<BtnTooltip right="3rem">				

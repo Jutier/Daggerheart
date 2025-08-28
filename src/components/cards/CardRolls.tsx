@@ -13,7 +13,7 @@ function CardRolls() {
 	const { t } = useTranslation();
 
 	return (
-		<Card title={t("cardRolls.title")}>
+		<Card cardTitle={t("cardRolls.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 

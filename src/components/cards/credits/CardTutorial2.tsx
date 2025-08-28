@@ -18,7 +18,7 @@ function CardTutorial2() {
 	const { t } = useTranslation();
 
 	return (
-		<Card title={t("cardTutorial2.title")}>
+		<Card cardTitle={t("cardTutorial2.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 

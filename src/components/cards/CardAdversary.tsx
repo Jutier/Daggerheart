@@ -146,7 +146,7 @@ function CardAdversary() {
 
 //Field({ width, type="text", value, changeFunc, placeholder, options, ...props }
 	return (
-		<Card title={isEditing ? (
+		<Card cardTitle={isEditing ? (
 			<Field
 				width="20rem"
 				value={localCopy.name}

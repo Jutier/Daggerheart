@@ -14,7 +14,7 @@ function CardSupport() {
 	const { t } = useTranslation();
 
 	return (
-		<Card title={t("cardSupport.title")}>
+		<Card cardTitle={t("cardSupport.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 

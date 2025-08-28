@@ -8,7 +8,7 @@ function CardTeamwork() {
 	const { t } = useTranslation();
 
 	return (
-		<Card title={t("cardTeamwork.title")}>
+		<Card cardTitle={t("cardTeamwork.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 

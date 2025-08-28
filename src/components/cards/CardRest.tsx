@@ -8,7 +8,7 @@ function CardRest() {
 	const { t } = useTranslation();
 
 	return (
-		<Card title={t("cardRest.title")}>
+		<Card cardTitle={t("cardRest.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 

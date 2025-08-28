@@ -190,12 +190,12 @@ function CardBattlePoints() {
 
 	function calculateBP() {
 		const points = (3 * numPCs) + 2
-			+ (adjusts.easy && -1)
-			+ (adjusts.hard && +2)
-			+ (adjusts.bonusDmg && -2)
-			+ (adjusts.lowerTier && +1)
-			+ (adjusts.twoSolos && -2)
-			+ (adjusts.smallBunch && +1);
+			+ (adjusts.easy ? -1 : 0)
+			+ (adjusts.hard ? +2 : 0)
+			+ (adjusts.bonusDmg ? -2 : 0)
+			+ (adjusts.lowerTier ? +1 : 0)
+			+ (adjusts.twoSolos ? -2 : 0)
+			+ (adjusts.smallBunch ? +1 : 0);
 
 		const spent = adversaries.reduce((spent, adv) => spent + advCosts[adv as keyof typeof advCosts], 0);
 
@@ -205,7 +205,7 @@ function CardBattlePoints() {
 	const results = calculateBP();
 
 	return (
-		<Card title={t("cardBattlePoints.title")}>
+		<Card cardTitle={t("cardBattlePoints.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 			<BtnTooltip right="3rem">

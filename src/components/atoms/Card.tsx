@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { motion } from "motion/react"
+import { motion, type HTMLMotionProps } from "motion/react";
 
 type CardProps = {
-	title?: string;
+	cardTitle?: React.ReactNode;
 	expand?: boolean;
 	resize?: string;
 	index?: string
 	children: React.ReactNode;
-} & React.HTMLAttributes<HTMLDivElement>;
+} & HTMLMotionProps<"div">;
 
 const StyledCard = styled(motion.div)<{ $resize?: string }>`
 	transition: 
@@ -43,7 +43,7 @@ const StyledTitle = styled.h2`
 	border-bottom: 3px solid var(--color-accent-2);
 `;
 
-function Card({ title, expand, resize, children, ...props }: CardProps) {
+function Card({ cardTitle, expand, resize, children, ...props }: CardProps) {
 
 	return (
 		<StyledCard
@@ -55,10 +55,10 @@ function Card({ title, expand, resize, children, ...props }: CardProps) {
 			transition={{ duration: 0.3}}
 			{...props}
 		>
-			{title && <StyledTitle>{title}</StyledTitle>}
+			{cardTitle && <StyledTitle>{cardTitle}</StyledTitle>}
 			<div style={{ padding: expand ? "0" : "0.6rem" }}>{children}</div>
 		</StyledCard>
-);
+	);
 }
 
 export default Card;

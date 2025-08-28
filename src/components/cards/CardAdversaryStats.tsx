@@ -8,7 +8,7 @@ function CardAdversaryStats() {
 	const { t } = useTranslation();
 
 	return (
-		<Card title={t("cardAdversaryStats.title")}>
+		<Card cardTitle={t("cardAdversaryStats.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 

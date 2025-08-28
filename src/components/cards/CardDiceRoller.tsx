@@ -182,7 +182,7 @@ function CardDiceRoller() {
 	}
 
 	return (
-		<Card title={t("cardDiceRoller.title")}>
+		<Card cardTitle={t("cardDiceRoller.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 			<BtnTooltip right="3rem">

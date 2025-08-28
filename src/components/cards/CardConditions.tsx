@@ -8,7 +8,7 @@ function CardConditions() {
 	const { t } = useTranslation();
 
 	return (
-		<Card title={t("cardConditions.title")}>
+		<Card cardTitle={t("cardConditions.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 

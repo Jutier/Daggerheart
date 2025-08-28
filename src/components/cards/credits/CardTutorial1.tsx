@@ -19,7 +19,7 @@ function CardTutorial1() {
 	const country = i18n.language.split("-")[1]?.toLowerCase() ?? "us";
 
 	return (
-		<Card title={t("cardTutorial1.title")}>
+		<Card cardTitle={t("cardTutorial1.title")}>
 			<BtnClose right="0.2rem"/>
 			<BtnDrag right="1.6rem"/>
 
