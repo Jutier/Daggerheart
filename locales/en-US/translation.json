@@ -1,0 +1,455 @@
+{
+	"ui": {
+		"appTitle": "GM Screen by Jutier",
+		"themes": {
+			"adjustReality": "Adjust Reality",
+			"elementalOrigin": "Elemental Origin",
+			"flight": "Flight",
+			"seaborne": "Seaborne",
+			"tempest": "Tempest",
+			"wildborne": "Wildborne"
+		},
+		"search": "Type to search",
+		"notFound": "Not found",
+		"upload": "Upload JSON",
+		"download": "Download JSON",
+		"saveLocal": "Save (browser)"
+	},
+	"cardAdversary": {
+		"title": "Adversary",
+
+		"tier": "Tier",
+		"atk": "Attack",
+		"diff": "Difficulty",
+		"threshold": "Thresholds",
+		"hp": "HP",
+		"stress": "Stress",
+		"feats": "Feats",
+		"name": "Name",
+		"categories": {
+			"bruiser": "Bruiser",
+			"horde": "Horde",
+			"leader": "Leader",
+			"minions": "Minions",
+			"ranged": "Ranged",
+			"skulk": "Skulk",
+			"social": "Social",
+			"solo": "Solo",
+			"standard": "Standard",
+			"support": "Support"
+		},
+		"dmgPhy": "Physical",
+		"dmgMag": "Magical",
+		"placeholders": {
+			"name": "Thistlefolk Thief",
+			"tier": "1",
+			"category": "Leader",
+			"atkName": "Serrated Blade",
+			"atkRange": "Melee",
+			"atkDamage": "2d4+3",
+			"dmgType": "Physical",
+			"threshold": "7/14",
+			"atkMod": "+3",
+			"diff": "14",
+			"hp": "4",
+			"stress": "2",
+			"featName": "Back Off - Action",
+			"featDesc": "Spend one Fear to..."
+		}
+	},
+	"cardAdversaryStats": {
+		"title": "Adversary Benchmark",
+
+		"head": {
+			"tier": "Tier",
+			"attack": "Attack",
+			"damage": "Damage",
+			"evasion": "Evasion",
+			"threshold": "Threshold"
+		},
+		"one": {
+			"tier": "1 (Lvl 1)",
+			"attack": "+1",
+			"damage": "1d6 +2<br/>1d12 +4",
+			"evasion": "11",
+			"threshold": "7 / 12"
+		},
+		"two": {
+			"tier": "2 (Lvl 2–4)",
+			"attack": "+2",
+			"damage": "2d6 +3<br/>2d12 +4",
+			"evasion": "13",
+			"threshold": "10 / 20"
+		},
+		"three": {
+			"tier": "3 (Lvl 5–7)",
+			"attack": "+3",
+			"damage": "3d8 +3<br/>3d12 +5",
+			"evasion": "17",
+			"threshold": "20 / 32"
+		},
+		"four": {
+			"tier": "4 (Lvl 8–10)",
+			"attack": "+4",
+			"damage": "4d8 +10<br/>4d12 +15",
+			"evasion": "20",
+			"threshold": "25 / 45"
+		}
+	},
+	"cardArmrStrss": {
+		"title": "Armor & Stress",
+
+		"armor": "<em>Armor</em> can be used, once per hit,<br/>to reduce the damage threshold of an attack",
+		"stress": "When your <em>Stress</em> is full you are vulnerable,<br/>if you mark another you lose 1 HP"
+	},
+	"cardAttributes": {
+		"title": "Character Attributes",
+
+		"agility": "<strong>Agility:</strong> Sprint, leap, maneuver",
+		"strength": "<strong>Strength:</strong> Lift, smash, grapple",
+		"finesse": "<strong>Finesse:</strong> Control, hide, tinker",
+		"instinct": "<strong>Instinct:</strong> Perceive, sense, navigate",
+		"presence": "<strong>Presence:</strong> Charm, perform, deceive",
+		"knowledge": "<strong>Knowledge:</strong> Recall, analyze, comprehend"
+	},
+	"cardBattlePoints": {
+		"title": "Battle Points",
+
+		"players": "Players",
+		"points": "Points",
+		"adjustments": "Adjustments",
+		"adversaries": "Adversaries",
+		"adjusts": {
+			"easy": "Easy",
+			"hard": "Hard",
+			"bonusDmg": "Damage Bonus",
+			"lowerTier": "Lower Tier",
+			"twoSolos": "2+ Solos",
+			"smallBunch": "Basic Adversaries"
+		},
+		"tooltip": {
+			"easy": "Easier or shorter",
+			"hard": "Harder or longer",
+			"bonusDmg": "+1d4 (or +2 fixed) for\u00A0adversaries",
+			"lowerTier": "Lower-tier\u00A0adversaries",
+			"twoSolos": "Use 2 or more Solos",
+			"smallBunch": "Don't include any Leader, Horde, Solo or\u00A0Bruiser"
+		}
+	},
+	"cardCombat": {
+		"title": "Combat Actions",
+
+		"movement": "Characters can move e within Close range",
+		"choose": "In addition they may choose between:",
+		"list": {
+			"attack": "Make a standard attack",
+			"condition": "Clear an condition",
+			"run": "Sprint a greater distance",
+			"other": "Perform another action"
+		}
+	},
+	"cardConditions": {
+		"title": "Conditions",
+
+		"hidden": "<strong>Hidden:</strong> Rolls against you have disadvantage",
+		"vulnerable": "<strong>Vulnerable:</strong> Enemies have advantage against you",
+		"restrained": "<strong>Restrained:</strong> Can't move, but you can stil act"
+	},
+	"cardDeath": {
+		"title": "Death Actions",
+
+		"avoid": "<strong>Avoid Death:</strong> Unconscious but can be healed",
+		"blaze": "<strong>Blaze of Glory:</strong> One critical action before dying",
+		"risk": "<strong>Risk It All:</strong> Roll duality<br/><hope>Hope</hope>: regain HP and/or <em>Stress</em><br/><fear>Fear</fear>: Death<br/><crit>Critical</crit>: Fully recover",
+		"scar": "<strong>Scar:</strong> Permanently lose 1 <hope>Hope</hope>"
+	},
+	"cardDifficulty": {
+		"title": "Difficulty",
+
+		"crit": "Critical",
+		"tip": "Difficulty is not chance of success.<br/>The % for each value represents:<br/>Real <em>probability</em> (minus) <crit>critical</crit><br/>Practical <em>value</em>: <strong>2.8% 22.2% 56.9% 83.4% 91.7%</strong><br/>Practical <em>success</em>: <strong>97.2% 77.8% 43.1% 16.6% 8.3%</strong>"
+	},
+	"cardFear": {
+		"title": "Fear",
+
+		"acquire": "GM gains on rolls with <fear>Fear</fear> and during rests",
+		"usage": "Can accumulate up to 12, used for:",
+		"list": {
+			"interrupt": "Interrupt players",
+			"experience": "Use adversary experience",
+			"effects": "Activate certain effects",
+			"additional": "Perform additional GM Moves"
+		}
+	},
+	"cardDiceRoller": {
+		"title": "Dice Roller",
+
+		"roll": "Roll",
+		"result": "Result",
+		"tooltip": "Your previous results can be seen in the browser console",
+		"tip": "Tip: You can use (B)d1 to add a fixed bonus of (+B)"
+	},
+	"cardFearTracker": {
+		"title": "Fear Tracker"
+	},
+	"cardHope": {
+		"title": "Hope",
+
+		"acquire": "Players gain on rolls with <hope>Hope</hope>",
+		"usage": "Each player can hold up to 6, used for:",
+		"list": {
+			"help": "Help an ally",
+			"experience": "Use an experience",
+			"class": "Activate a class feature",
+			"tagTeam": "Start a Tag Team Roll"
+		}
+	},
+	"cardImage": {
+		"title": "Imagem",
+
+		"placeholder": "Paste the image URL",
+		"tip": "You can use imgur or discord to generate links"
+	},
+"cardPrices": {
+		"title": "Prices",
+
+		"conversion": "100 <strong>Handfuls</strong> = 10 <strong>Bags</strong> = 1 <strong>Chest</strong>",
+		"head": {
+			"item": "Item / Service",
+			"cost": "Cost"
+		},
+		"meal": {
+			"item": "Meal for the party",
+			"cost": "1 Handful"
+		},
+		"standardRoom": {
+			"item": "Standard inn room (/night)",
+			"cost": "1 Handful"
+		},
+		"luxuryRoom": {
+			"item": "Luxury inn room (/night)",
+			"cost": "1 Bag"
+		},
+		"ride": {
+			"item": "Carriage ride",
+			"cost": "2 Handfuls"
+		},
+		"mount": {
+			"item": "Mount (horse, etc.)",
+			"cost": "3 Bags"
+		},
+		"tools": {
+			"item": "Specialized tools",
+			"cost": "3 Handfuls"
+		},
+		"fineClothes": {
+			"item": "Fine clothing",
+			"cost": "3 Handfuls"
+		},
+		"luxuryClothes": {
+			"item": "Luxury clothing",
+			"cost": "1 Bag"
+		},
+		"t1Equip": {
+			"item": "Tier 1 Equipment",
+			"cost": "1 to 5 Handfuls"
+		},
+		"t2Equip": {
+			"item": "Tier 2 Equipment",
+			"cost": "1 to 2 Bags"
+		},
+		"t3Equip": {
+			"item": "Tier 3 Equipment",
+			"cost": "5 to 10 Bags"
+		},
+		"t4Equip": {
+			"item": "Tier 4 Equipment",
+			"cost": "1 to 2 Chests"
+		}
+	},
+	"cardRange": {
+		"title": "Range",
+
+		"head": {
+			"distance": "Distance",
+			"fall": "Fall Damage"
+		},
+		"melee": {
+			"distance": "<strong>Melee</strong>",
+			"fall": "-----"
+		},
+		"vClose": {
+			"distance": "<strong>Very close:</strong> up to 3 meters",
+			"fall": "1d10 +3"
+		},
+		"close": {
+			"distance": "<strong>Close:</strong> up to 10 meters",
+			"fall": "1d20 +5"
+		},
+		"far": {
+			"distance": "<strong>Far:</strong> up to 30 meters",
+			"fall": "1d100 +15"
+		},
+		"vFar": {
+			"distance": "<strong>Very far:</strong> up to 100 meters",
+			"fall": "1d100 +15"
+		}
+	},
+	"cardRest": {
+		"title": "Rest",
+
+		"cards": "Cards can be freely swaped from the vault",
+		"cost": "GM gains <fear>Fear</fear> during short or long rests:<br/>(1d4) or (1d4 +players), respectively",
+		"choose": "Choose two actions, may repeat:",
+		"head": {
+			"action": "Action",
+			"shortRest": "Short Rest",
+			"longRest": "Long Rest"
+		},
+		"tendWounds": {
+			"action": "Tend to<br/>Wounds*",
+			"shortRest": "1d4 +Tier",
+			"longRest": "Full"
+		},
+		"clearStress": {
+			"action": "Clear<br/>Stress",
+			"shortRest": "1d4 +Tier",
+			"longRest": "Full"
+		},
+		"repairArmor": {
+			"action": "Repair<br/>Armor*",
+			"shortRest": "1d4 +Tier",
+			"longRest": "Full"
+		},
+		"prepare": {
+			"action": "Prepare",
+			"shortRest": "+1 <hope>Hope</hope><br/>Party Up:<br/>+2 each",
+			"longRest": "+1 <hope>Hope</hope><br/>Party Up:<br/>+2 each"
+		},
+		"project": {
+			"action": "Project",
+			"shortRest": "",
+			"longRest": "Advance a counter"
+		},
+		"ally": "*Can be used for an ally"
+	},
+	"cardRolls": {
+		"title": "Rolls",
+
+		"action": {
+			"title": "Action",
+			"description": "Attribute-><wbr/> Difficulty-><wbr/> (Dis)Advantage-><br/>Declare mod-><wbr/> Roll Duality-><wbr/> Add mod-><wbr/> <hope>H</hope>/<fear>F</fear>",
+			"note": "<crit>Critical</crit>: Gain one <hope>Hope</hope> and reduce one <em>Stress</em>"
+		},
+		"reaction": {
+			"title": "Reaction",
+			"description": "Similar to Action, but doesn't produce <hope>H</hope>/<fear>F</fear> or similar"
+		},
+		"attack": {
+			"title": "Attack",
+			"description": "Action roll against the target's <em>Difficulty</em>",
+			"note": "<crit>Critical</crit>: Add maximum damage potential"
+		},
+		"damage": {
+			"title": "Damage",
+			"description": "Attack method defines the die to be used<br/>Quantity (if not specified) is defined by your <em>Proficiency</em>/<em>SpellCast</em>"
+		}
+	},
+	"cardSceneFear": {
+		"title": "Fear per Scene",
+
+		"head": {
+			"scene": "Scene",
+			"fear": "<fear>Fear</fear>",
+			"desc": "Description"
+		},
+		"incidental": {
+			"scene": "Incidental",
+			"fear": "(0-1)",
+			"desc": "Social or exploration scenes"
+		},
+		"minor": {
+			"scene": "Minor",
+			"fear": "(1-3)",
+			"desc": "Travel or brief encounter"
+		},
+		"standard": {
+			"scene": "Standard",
+			"fear": "(2-4)",
+			"desc": "Impactful scene; Difficult journey"
+		},
+		"major": {
+			"scene": "Major",
+			"fear": "(4-8)",
+			"desc": "Battle with narrative impact"
+		},
+		"climactic": {
+			"scene": "Climactic",
+			"fear": "(6-12)",
+			"desc": "Epic battle; Fate determining"
+		}
+	},
+	"cardSpacing": {
+		"title": "Visual Spacing"
+	},
+	"cardSpotlight": {
+		"title": "Spotlight",
+
+		"imageSrc": "/assets/spotlight-en.svg"
+	},
+	"cardTeamwork": {
+		"title": "Teamwork",
+		"help": "<strong>Help an Ally:</strong> Spend 1 <hope>Hope</hope> to add 1d6 to another player's roll",
+		"group": "<strong>Group Action:</strong> The leader makes an <strong>Action</strong> roll<br/>Others roll <strong>Reaction</strong>, adding +1 or -1",
+		"tagTeam": "<strong>Tag Team:</strong> Once per session by spending 3 <hope>Hope</hope><br/>Both roll <strong>Action</strong> and choose one result<br/>Both roll <strong>Damage</strong> and sum results<br/><em>For <hope>H</hope>/<fear>F</fear> purposes, they are identical rolls<em/>"
+	},
+	"cardText": {
+		"title": "Text"
+	},
+	"cardTutorial1": {
+		"title": "Tutorial: Introduction",
+
+		"welcome": "Hello there! Thank you for using GM Screen!",
+		"diy": "This app is not a ready-made screen, but rather a simple way for you to create your own.",
+		"use": "You can use it directly in your browser on any device, or save a version as PDF if you prefer.",
+		"menus": "On the left sidebar (or at the bottom on smaller screens), there are four menus:",
+		"cards": "This is where the cards live. Just choose one and click where you want it to appear. The menu stays open so you can select more. You can also use the search bar to find something specific.",
+		"theme": "Here you can select one of the predefined themes to change the look.",
+		"lang": "Where you can change the language.",
+		"save": "To save/load your board."
+	},
+	"cardTutorial2": {
+		"title": "Tutorial: Anatomy",
+
+		"names": "The Board is your screen. It has several Decks, where you place the Cards.",
+		"space": "Cards are automatically spaced out, but if you prefer, you can adjust this using the Spacing Card.",
+		"buttons": "Besides the content, cards can have 4 buttons:",
+		"tooltip": "Displays more information about that card.",
+		"edit": "To enter edit mode, allowing you to change details of the card.",
+		"move": "You can reposition the card by clicking this button and then selecting where you want it to go.",
+		"close": "Removes that card from the board.",
+		"newDeck": "This button appears at the end of the board and is used to add more Decks."
+	},
+	"cardTutorial3": {
+		"title": "Tutorial: Saving",
+
+		"login": "This app has no login and does not collect any of your data. You need to save your information manually.",
+		"localStorage": "The simplest way is by using the browser’s local storage (not automatic).",
+		"export": "You can also export your board in .json format, allowing you to share it across devices.",
+		"pdf": "Using your browser’s print menu, you can save as PDF. Adjust the paper settings to your preference."
+	},
+	"cardSupport": {
+		"title": "Contribute",
+
+		"repo": "You can access the app’s repository at ",
+		"support": "If you feel comfortable, you can help by suggesting new features, sharing feedback, or contributing with translations.",
+		"kofi": "And also directly through "
+	},
+	"cardLicense": {
+		"title": "License",
+		
+		"srd": "Materials included from the SRD, © Critical Role, LLC.",
+		"license": "Under the Darrington Press Community Gaming License.",
+		"fullLink": "Full license available at: "
+	}
+}
