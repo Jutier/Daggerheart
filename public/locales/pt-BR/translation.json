@@ -1,0 +1,455 @@
+{
+	"ui": {
+		"appTitle": "Escudo do Mestre by Jutier",
+		"themes": {
+			"adjustReality": "Ajustar Realidade",
+			"elementalOrigin": "Origem Elemental",
+			"flight" : "Voar",
+			"seaborne" : "Filho do Mar",
+			"tempest" : "Tempestade",
+			"wildborne" : "Filho da Selva"
+		},
+		"search": "Digite para buscar",
+		"notFound": "Não encontrado",
+		"upload": "Carregar JSON",
+		"download": "Baixar JSON",
+		"saveLocal": "Salvar (navegador)"
+	},
+	"cardAdversary": {
+		"title": "Adversário",
+
+		"tier": "Tier",
+		"atk": "Ataque",
+		"diff": "Dificuldade",
+		"threshold": "Limiares",
+		"hp": "Vida",
+		"stress": "Estresse",
+		"feats": "Habilidades",
+		"name": "Nome",
+		"categories": {
+			"bruiser" : "Brutamontes",
+			"horde" : "Horda",
+			"leader" : "Líder",
+			"minions" : "Lacaios",
+			"ranged" : "Atirador",
+			"skulk" : "Ardiloso",
+			"social" : "Social",
+			"solo" : "Solo",
+			"standard" : "Padrão",
+			"support" : "Suporte"
+		},
+		"dmgPhy": "Físico",
+		"dmgMag": "Mágico",
+		"placeholders": {
+			"name": "Ladrão do Cardo",
+			"tier": "1",
+			"category": "Líder",
+			"atkName": "Punhal Serrilhado",
+			"atkRange": "Corpo a Corpo",
+			"atkDamage": "2d4+3",
+			"dmgType": "Físico",
+			"threshold": "7/14",
+			"atkMod": "+3",
+			"diff": "14",
+			"hp": "4",
+			"stress": "2",
+			"featName": "Cai Fora - Ação",
+			"featDesc": "Gaste um Fear para..."
+		}
+	},
+	"cardAdversaryStats": {
+		"title": "Referência de Adversários",
+
+		"head": {
+			"tier": "Tier",
+			"attack": "Ataque",
+			"damage": "Dano",
+			"evasion": "Evasão",
+			"threshold": "Limiar"
+		},
+		"one": {
+			"tier": "1 (Nvl 1)",
+			"attack": "+1",
+			"damage": "1d6 +2<br/>1d12 +4",
+			"evasion": "11",
+			"threshold": "7 / 12"
+		},
+		"two": {
+			"tier": "2 (Nvl 2-4)",
+			"attack": "+2",
+			"damage": "2d6 +3<br/>2d12 +4",
+			"evasion": "13",
+			"threshold": "10 / 20"
+		},
+		"three": {
+			"tier": "3 (Nvl 5-7)",
+			"attack": "+3",
+			"damage": "3d8 +3<br/>3d12 +5",
+			"evasion": "17",
+			"threshold": "20 / 32"
+		},
+		"four": {
+			"tier": "4 (Nvl 8-10)",
+			"attack": "+4",
+			"damage": "4d8 +10<br/>4d12 +15",
+			"evasion": "20",
+			"threshold": "25 / 45"
+		}
+	},
+	"cardArmrStrss": {
+		"title": "Armadura & Estresse",
+
+		"armor": "<em>Armadura</em> pode ser usada, uma vez por impacto,<br/>para reduzir o limiar de dano de um ataque",
+		"stress": "Quando seu <em>Estresse</em> está cheio você fica vulnerável,<br/>se receber outro perde um ponto de vida"
+	},
+	"cardAttributes": {
+		"title": "Atributos de Personagem",
+
+		"agility": "<strong>Agilidade:</strong> Correr, saltar, manobrar",
+		"strength": "<strong>Força:</strong> Levantar, quebrar, segurar",
+		"finesse": "<strong>Finesse:</strong> Destreza, tato, delicadeza",
+		"instinct": "<strong>Instinto:</strong> Perceber, sentir, sobreviver",
+		"presence": "<strong>Presença:</strong> Encantar, inspirar, enganar",
+		"knowledge": "<strong>Conhecimento:</strong> Recordar, analisar, compreender"
+	},
+	"cardBattlePoints": {
+		"title": "Pontos de Batalha",
+
+		"players": "Jogadores",
+		"points": "Pontos",
+		"adjustments": "Ajustes",
+		"adversaries": "Adversários",
+		"adjusts": {
+			"easy": "Facil",
+			"hard": "Difícil",
+			"bonusDmg": "Bonus de Dano",
+			"lowerTier": "Tier menor",
+			"twoSolos": "2+ Solos",
+			"smallBunch": "Adversários Básicos"
+		},
+		"tooltip": {
+			"easy": "Mais fácil ou curto",
+			"hard": "Mais difícil ou longo",
+			"bonusDmg": "+1d4 (ou +2 fixo) para\u00A0adversários",
+			"lowerTier": "Adversários de tier\u00A0menor",
+			"twoSolos": "Usar 2 ou mais Solos",
+			"smallBunch": "Não incluir nenhum, Líder, Horda, Solo ou\u00A0Brutamontes"
+		}
+	},
+	"cardCombat": {
+		"title": "Ações de Combate",
+
+		"movement": "Personagens podem se mover até um local Próximo",
+		"choose": "Além disso podem escolher entre:",
+		"list":{
+			"attack": "Realizar um ataque",
+			"condition": "Limpar uma condição",
+			"run": "Andar uma distância maior",
+			"other": "Realizar outra ação"
+		}
+	},
+	"cardConditions": {
+		"title": "Condições",
+
+		"hidden": "<strong>Escondido:</strong> Rolagens contra você têm desvantagem",
+		"vulnerable": "<strong>Vulnerável:</strong> Rolagens têm vantagem contra você",
+		"restrained": "<strong>Restringido:</strong> Não pode se mover, apenas agir"
+	},
+	"cardDeath": {
+		"title": "Ações de Morte",
+
+		"avoid": "<strong>Evitar Morte:</strong> Inconsciente mas pode ser curado",
+		"blaze": "<strong>Chama da Glória:</strong> Uma ação crítica antes de morrer",
+		"risk": "<strong>Arriscar Tudo:</strong> Rola dualidade<br/><hope>Hope</hope>: recupera PV e/ou <em>Estresse</em><br/><fear>Fear</fear>: Morte<br/><crit>Crítico</crit>: Recupera totalmente",
+		"scar": "<strong>Cicatriz</strong>: Perde 1 <hope>Hope</hope> permanentemente"
+	},
+	"cardDifficulty": {
+		"title": "Dificuldade",
+
+		"crit": "Crítico",
+		"tip": "Dificuldade não é chance de sucesso.<br/>A % de cada valor representa:<br/>Probabilidade <em>real</em> (menos) <crit>crítico</crit><br/>Valor <em>prático</em>: <strong>2.8% 22.2% 56.9% 83.4% 91.7%</strong><br/>Sucesso <em>prático</em>: <strong>97.2% 77.8% 43.1% 16.6% 8.3%</strong>"
+	},
+	"cardFear": {
+		"title": "Fear",
+
+		"acquire": "Mestre recebe em rolagens com <fear>Fear</fear> e em descansos",
+		"usage": "Pode acumular até 12, é usado para:",
+		"list": {
+			"interrupt": "Interromper jogadores",
+			"experience": "Usar experiência de adversários",
+			"effects": "Ativar certos efeitos",
+			"additional" : "Realizar Ações do Mestre adicionais"
+		}
+	},
+	"cardDiceRoller": {
+		"title": "Rolar Dados",
+
+		"roll": "Rolar",
+		"result": "Resultado",
+		"tooltip": "Seus resultados anteriores podem ser vistos no console do navegador",
+		"tip": "Dica: Você pode usar (B)d1 para adicionar um bônus fixo de (+B)"
+	},
+	"cardFearTracker": {
+		"title": "Fear Tracker"
+	},
+	"cardHope": {
+		"title": "Hope",
+
+		"acquire": "Jogadores recebem em rolagens com <hope>Hope</hope>",
+		"usage": "Cada jogador pode acumular até 6, é usado para:",
+		"list": {
+			"help": "Ajudar um aliado",
+			"experience": "Usar uma experiência",
+			"class": "Ativar um recurso de classe",
+			"tagTeam" : "Iniciar Tag Team Roll"
+		}
+	},
+	"cardImage": {
+		"title": "Imagem",
+
+		"placeholder": "Cole o endereço da imagem",
+		"tip": "Links podem ser gerados usando o imgur ou discord"
+	},
+	"cardPrices": {
+		"title": "Preços",
+
+		"conversion": "100 <strong>Punhados</strong> = 10 <strong>Sacos</strong> = 1 <strong>Baú</strong>",
+		"head": {
+			"item": "Item / Serviço",
+			"cost": "Custo"
+		},
+		"meal": {
+			"item": "Refeição para o grupo",
+			"cost": "1 Punhado"
+		},
+		"standardRoom": {
+			"item": "Quarto padrão (/noite)",
+			"cost": "1 Punhado"
+		},
+		"luxuryRoom": {
+			"item": "Quarto de luxo (/noite)",
+			"cost": "1 Saco"
+		},
+		"ride": {
+			"item": "Viagem de carroça",
+			"cost": "2 Punhados"
+		},
+		"mount": {
+			"item": "Montaria (cavalo, etc.)",
+			"cost": "3 Sacos"
+		},
+		"tools": {
+			"item": "Ferramentas especializadas",
+			"cost": "3 Punhados"
+		},
+		"fineClothes": {
+			"item": "Vestuário refinado",
+			"cost": "3 Punhados"
+		},
+		"luxuryClothes": {
+			"item": "Vestuário de luxo",
+			"cost": "1 Saco"
+		},
+		"t1Equip": {
+			"item": "Equipamento Tier 1",
+			"cost": "1 a 5 Punhados"
+		},
+		"t2Equip": {
+			"item": "Equipamento Tier 2",
+			"cost": "1 a 2 Sacos"
+		},
+		"t3Equip": {
+			"item": "Equipamento Tier 3",
+			"cost": "5 a 10 Sacos"
+		},
+		"t4Equip": {
+			"item": "Equipamento Tier 4",
+			"cost": "1 a 2 Baús"
+		}
+	},
+	"cardRange": {
+		"title": "Alcance",
+
+		"head": {
+			"distance": "Distância",
+			"fall": "Dano de Queda"
+		},
+		"melee": {
+			"distance": "<strong>Corpo a Corpo</strong>",
+			"fall": "-----"
+		},
+		"vClose": {
+			"distance": "<strong>Muito próximo:</strong> até 3 metros",
+			"fall": "1d10 +3"
+		},
+		"close": {
+			"distance": "<strong>Próximo:</strong> até 10 metros",
+			"fall": "1d20 +5"
+		},
+		"far": {
+			"distance": "<strong>Longe:</strong> até 30 metros",
+			"fall": "1d100 +15"
+		},
+		"vFar": {
+			"distance": "<strong>Muito longe:</strong> até 100 metros",
+			"fall": "1d100 +15"
+		}
+	},
+	"cardRest": {
+		"title": "Descanso",
+
+		"cards": "Cartas podem ser movidas livremente do cofre",
+		"cost": "O Mestre recebe <fear>Fear</fear> em descansos curtos ou longos:<br/>(1d4) ou (1d4 +jogadores), respectivamente",
+		"choose":"Escolhe duas ações, podendo repetir:",
+		"head": {
+			"action": "Ação",
+			"shortRest": "Descanso<br/>Curto",
+			"longRest": "Descanso<br/>Longo"
+		},
+		"tendWounds": {
+			"action": "Tratar<br/>Ferimentos*",
+			"shortRest": "1d4 +Tier",
+			"longRest": "Toda"
+		},
+		"clearStress": {
+			"action": "Reduzir<br/>Estresse",
+			"shortRest": "1d4 +Tier",
+			"longRest": "Toda"
+		},
+		"repairArmor": {
+			"action": "Reparar<br/>Armadura*",
+			"shortRest": "1d4 +Tier",
+			"longRest": "Toda"
+		},
+		"prepare": {
+			"action": "Preparar-se",
+			"shortRest": "+1 <hope>Hope</hope><br/>Em grupo:<br/>+2 cada",
+			"longRest": "+1 <hope>Hope</hope><br/>Em grupo:<br/>+2 cada"
+		},
+		"project": {
+			"action": "Projeto",
+			"shortRest": "",
+			"longRest": "Avança um contador"
+		},
+		"ally": "*Podem ser usados para aliados"
+	},
+	"cardRolls": {
+		"title": "Rolagens",
+
+		"action": {
+			"title": "Ação",
+			"description": "Atributo-><wbr/> Dificuldade-><wbr/> (Des)Vantagem-><wbr/> Declarar mod-><wbr/> Rola Dualidade-><wbr/> Soma mod-><wbr/> <hope>H</hope>/<fear>F</fear>",
+			"note": "<crit>Crítico</crit>: Recebe um <hope>Hope</hope> e reduz um <em>Estresse</em>"
+		},
+		"reaction": {
+			"title": "Reação",
+			"description": "Similar à Ação, mas não gera <hope>H</hope>/<fear>F</fear> ou outros recuros"
+		},
+		"attack": {
+			"title": "Ataque",
+			"description": "Rolagem de ação contra a <em>Dificuldade</em> do alvo",
+			"note": "<crit>Crítico</crit>: Soma o potencial máximo de dano"
+		},
+		"damage": {
+			"title": "Dano",
+			"description": "O método de ataque define o dado a ser usado<br/>Quantos (se não especificado), são definidos pela sua <em>Proeficiência</em>/<em>SpellCast</em>"
+		}
+	},
+	"cardSceneFear": {
+		"title": "Fear em Cenas",
+
+		"head": {
+			"scene": "Cena",
+			"fear": "<fear>Fear</fear>",
+			"desc": "Descrição"
+		},
+		"incidental": {
+			"scene": "Incidental",
+			"fear": "(0-1)",
+			"desc": "Entre Cenas"
+		},
+		"minor": {
+			"scene": "Menor",
+			"fear": "(1-3)",
+			"desc": "Viagem ou breve confronto"
+		},
+		"standard": {
+			"scene": "Padrão",
+			"fear": "(2-4)",
+			"desc": "Situação relevante; Viagem difícil"
+		},
+		"major": {
+			"scene": "Maior",
+			"fear": "(4-8)",
+			"desc": "Batalha com impacto narrativo"
+		},
+		"climactic": {
+			"scene": "Climático",
+			"fear": "(6-12)",
+			"desc": "Batalha épica; Destino em jogo"
+		}
+	},
+	"cardSpacing" : {
+		"title": "Espaçamento Visual"
+	},
+	"cardSpotlight": {
+		"title": "Holofote",
+
+		"imageSrc": "/assets/spotlight-br.svg"
+	},
+	"cardTeamwork": {
+		"title": "Trabalho em Equipe",
+		"help": "<strong>Ajudar um Aliado:</strong> Use 1 <hope>Hope</hope> para adicionar 1d6 à rolagem de outro jogador",
+		"group": "<strong>Ação em Grupo:</strong> O líder faz uma rolagem de <strong>Ação</strong><br/>Os demais rolam <strong>Reação</strong>, adicionando +1 ou -1",
+		"tagTeam": "<strong>Tag Team:</strong> Uma vez por sessão gastando 3 <hope>Hope</hope><br/>Ambos rolam <strong>Ação</strong> e escolhem um resultado<br/>Ambos rolam <strong>Dano</strong> e somam os resultados<br/><em>Para fins de <hope>H</hope>/<fear>F</fear>, são rolagens identicas<em/>"
+	},
+	"cardText": {
+		"title": "Texto"
+	},
+	"cardTutorial1": {
+		"title": "Tutorial: Introdução",
+
+		"welcome": "Boas-vindas! Obrigado por usar Escudo do Mestre!",
+		"diy": "Este app não é uma tela pronta, mas sim uma forma simples de você criar a sua própria",
+		"use": "Você pode usar direto no navegador, em qualquer dispositivo ou também salvar uma versão em PDF",
+		"menus": "Na barra à esquerda (ou abaixo, em telas menores), existem quatro menus:",
+		"cards": "É onde estão os cards, basta escolher e clicar onde quiser que ele apareça. O\u00A0menu\u00A0fica\u00A0aberto para você selecionar outros. Você também pode usar a barra de pesquisa para procurar algo específico",
+		"theme": "Aqui você pode selecionar um dos temas pré-definidos para mudar o visual",
+		"lang": "Onde você pode trocar o idioma",
+		"save": "Para salvar/carregar seu board"
+	},
+	"cardTutorial2": {
+		"title": "Tutorial: Anatomia",
+
+		"names": "O Board é a sua tela. Nele você tem diversas colunas, os Decks, onde você posiciona os Cards",
+		"space": "A disposição automática faz com que eles fiquem afastados, caso queira, você pode contornar isso usando o Card de Espaçamento",
+		"buttons": "Além do conteúdo, os cards podem ter 4 botões",
+		"tooltip": "Exibe mais informações sobre aquele Card.",
+		"edit": "Para entrar no modo de edição do card",
+		"move": "Você pode reposicionar o Card, clicando nesse botão e depois para onde quiser mover",
+		"close": "Remove aquele card do board",
+		"newDeck": "Este botão fica no final do board e serve para adicionar mais Decks"
+	},
+	"cardTutorial3": {
+		"title": "Tutorial: Salvar",
+
+		"login": "Esta aplicação não tem login e nem recolhe seus dados para nenhum tipo de servidor. Você precisa salvar suas informações manualmente",
+		"localStorage": "A forma mais simples é usando a memória do navegador (não é automatico)",
+		"export": "Você também pode exportar seu board no formato .json, assim você pode compartilhá-lo com outros dispositivos",
+		"pdf": "Usando o menu de impressão do navegador, é possível salvar como PDF. Ajuste as configurações de papel até ficar do seu agrado, o principal é remover as margens e "
+	},
+	"cardSupport": {
+		"title": "Contribuir",
+
+		"repo": "Você pode acessar o repositório do app no ",
+		"support": "Caso se sinta à vontade, pode me ajudar sugerindo melhorias e compartilhando sua opinião ou com outras outras traduções",
+		"kofi": "Ou também, diretamente pelo "
+	},
+	"cardLicense": {
+		"title": "Licença",
+		
+		"srd": "Inclui conteúdo do SRD, © Critical Role, LLC.",
+		"license": "Sob a Darrington Press Community Gaming License.",
+		"fullLink": "Licensa completa em: "
+	}
+}

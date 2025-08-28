@@ -1,0 +1,73 @@
+[
+    {
+        "cards": [
+            {
+                "cardType": "tutorial1"
+            },
+            {
+                "cardType": "support"
+            }
+        ]
+    },
+    {
+        "cards": [
+            {
+                "cardType": "tutorial2"
+            }
+        ]
+    },
+    {
+        "cards": [
+            {
+                "cardType": "tutorial3"
+            },
+            {
+                "cardType": "license"
+            }
+        ]
+    },
+    {
+        "cards": [
+            {
+                "cardType": "fearTracker",
+                "fearCount": 7
+            },
+            {
+                "cardType": "difficulty"
+            },
+            {
+                "cardType": "diceRoller"
+            }
+        ]
+    },
+    {
+        "cards": [
+            {
+                "cardType": "battlePoints"
+            },
+            {
+                "cardType": "adversary",
+                "name": "Thistlefolk Thief",
+                "tier": 1,
+                "category": "Leader",
+                "atkMod": "+3",
+                "difficulty": "14",
+                "thresholds": "7/14",
+                "hpMax": 4,
+                "hpCur": 4,
+                "stressMax": 2,
+                "stressCur": 2,
+                "atkName": "Serrated Blade",
+                "atkDamage": "2d4+3",
+                "atkRange": "Melee",
+                "dmgType": "Physical",
+                "feats": [
+                    {
+                        "name": "Back Off - Action",
+                        "desc": "Spend one Fear to..."
+                    }
+                ]
+            }
+        ]
+    }
+]
