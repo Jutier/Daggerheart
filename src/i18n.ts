@@ -17,7 +17,7 @@ i18n
 			escapeValue: false,
 		},
 		backend: {
-			loadPath: '/locales/{{lng}}/translation.json',
+			loadPath: '/Daggerheart/locales/{{lng}}/translation.json',
 		},
 		react: {
 			transKeepBasicHtmlNodesFor: ['br', 'strong', 'i', 'p', 'em', 'wbr', 's']
