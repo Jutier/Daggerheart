@@ -97,7 +97,7 @@ const Results = styled.p`
 type DieSpec = {
 	dieType: string;
 	sides: number;
-	value: number;
+	value: number | string;
 	rolling: boolean;
 };
 
@@ -110,7 +110,9 @@ function CardDiceRoller() {
 
 	const [dice, setDice] = useState<DieSpec[]>([]);
 	const [sideN, setSideN] = useState(100);
-	const result = dice.reduce((sum, die) => sum + die.value, 0);
+	const result = dice.reduce(
+		(sum, die) => sum + (typeof die.value === "number" ? die.value : 0), 0
+	);
 
 	function rollAll() {
 		setDice(dice =>
@@ -149,7 +151,7 @@ function CardDiceRoller() {
 			{
 				dieType,
 				sides,
-				value: sides,
+				value: "?",
 				rolling: false,
 			}
 		]);
@@ -161,13 +163,13 @@ function CardDiceRoller() {
 			{
 				dieType: "hope",
 				sides: 12,
-				value: 12,
+				value: "?",
 				rolling: false,
 			},
 			{
 				dieType: "fear",
 				sides: 12,
-				value: 12,
+				value: "?",
 				rolling: false,
 			}
 		]);

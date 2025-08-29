@@ -61,29 +61,27 @@ function Die({
 	onClick,
 }: DieProps) {
 
-	let _dieType, fillColor, inStrokeColor, outStrokeColor, textColor;
+	const textColor = "var(--color-text)";
+	let _dieType, outStrokeColor, inStrokeColor, fillColor;
 
 	switch (dieType) {
 		case "hope":
 			_dieType = "d12"
-			fillColor = "#111111a0";
-			inStrokeColor = "var(--color-bg)";
 			outStrokeColor = "var(--color-hope)";
-			textColor = "var(--color-hope)";
+			inStrokeColor = "var(--color-bg)";
+			fillColor = "var(--color-fg)";
 			break;
 		case "fear":
 			_dieType = "d12"
-			fillColor = "#111111a0";
-			inStrokeColor = "var(--color-bg)";
 			outStrokeColor = "var(--color-fear)";
-			textColor = "var(--color-fear)";
+			inStrokeColor = "var(--color-bg)";
+			fillColor = "var(--color-fg)";
 			break;
 		default:
 			_dieType = dieType
-			fillColor = "var(--color-bg)";
-			inStrokeColor = "var(--color-fg)";
 			outStrokeColor = "var(--color-accent-1)";
-			textColor = "var(--color-text)";
+			inStrokeColor = "var(--color-fg)";
+			fillColor = "var(--color-bg)";
 	}
 
 	const die = DIE_SVGS[_dieType];
