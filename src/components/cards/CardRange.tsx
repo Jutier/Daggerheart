@@ -15,26 +15,32 @@ function CardRange() {
 			<Table>
 				<Head>
 					<Translate i18nKey="cardRange.head.distance"/>
+					<Translate i18nKey="cardRange.head.square"/>
 					<Translate i18nKey="cardRange.head.fall"/>
 				</Head>
 				<Body>
 					<Translate i18nKey="cardRange.melee.distance"/>
+					<Translate i18nKey="cardRange.melee.square"/>
 					<Translate i18nKey="cardRange.melee.fall"/>
 				</Body>
 				<Body>
 					<Translate i18nKey="cardRange.vClose.distance"/>
+					<Translate i18nKey="cardRange.vClose.square"/>
 					<Translate i18nKey="cardRange.vClose.fall"/>
 				</Body>
 				<Body>
 					<Translate i18nKey="cardRange.close.distance"/>
+					<Translate i18nKey="cardRange.close.square"/>
 					<Translate i18nKey="cardRange.close.fall"/>
 				</Body>
 				<Body>
 					<Translate i18nKey="cardRange.far.distance"/>
+					<Translate i18nKey="cardRange.far.square"/>
 					<Translate i18nKey="cardRange.far.fall"/>
 				</Body>
 				<Body>
 					<Translate i18nKey="cardRange.vFar.distance"/>
+					<Translate i18nKey="cardRange.vFar.square"/>
 					<Translate i18nKey="cardRange.vFar.fall"/>
 				</Body>
 			</Table>

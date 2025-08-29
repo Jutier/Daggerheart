@@ -271,27 +271,33 @@
 		"title": "Range",
 
 		"head": {
-			"distance": "Distance",
+			"distance": "Distance (feet)",
+			"square": "Grid",
 			"fall": "Fall Damage"
 		},
 		"melee": {
 			"distance": "<strong>Melee</strong>",
+			"square": "1 square",
 			"fall": "-----"
 		},
 		"vClose": {
-			"distance": "<strong>Very close:</strong> up to 3 meters",
+			"distance": "<strong>Very close:</strong> up to 10",
+			"square": "3 squares",
 			"fall": "1d10 +3"
 		},
 		"close": {
-			"distance": "<strong>Close:</strong> up to 10 meters",
+			"distance": "<strong>Close:</strong> up to 30",
+			"square": "6 squares",
 			"fall": "1d20 +5"
 		},
 		"far": {
-			"distance": "<strong>Far:</strong> up to 30 meters",
+			"distance": "<strong>Far:</strong> up to 100",
+			"square": "12 squares",
 			"fall": "1d100 +15"
 		},
 		"vFar": {
-			"distance": "<strong>Very far:</strong> up to 100 meters",
+			"distance": "<strong>Very far:</strong> up to 300",
+			"square": "13+ squares",
 			"fall": "1d100 +15"
 		}
 	},

@@ -271,27 +271,33 @@
 		"title": "Alcance",
 
 		"head": {
-			"distance": "Distância",
+			"distance": "Distância (metros)",
+			"square": "Grade",
 			"fall": "Dano de Queda"
 		},
 		"melee": {
 			"distance": "<strong>Corpo a Corpo</strong>",
+			"square": "1 espaço",
 			"fall": "-----"
 		},
 		"vClose": {
-			"distance": "<strong>Muito próximo:</strong> até 3 metros",
+			"distance": "<strong>Muito próximo:</strong> até 3",
+			"square": "3 espaços",
 			"fall": "1d10 +3"
 		},
 		"close": {
-			"distance": "<strong>Próximo:</strong> até 10 metros",
+			"distance": "<strong>Próximo:</strong> até 10",
+			"square": "6 espaços",
 			"fall": "1d20 +5"
 		},
 		"far": {
-			"distance": "<strong>Longe:</strong> até 30 metros",
+			"distance": "<strong>Longe:</strong> até 30",
+			"square": "12 espaços",
 			"fall": "1d100 +15"
 		},
 		"vFar": {
-			"distance": "<strong>Muito longe:</strong> até 100 metros",
+			"distance": "<strong>Muito longe:</strong> até 100",
+			"square": "13+ espaços",
 			"fall": "1d100 +15"
 		}
 	},
