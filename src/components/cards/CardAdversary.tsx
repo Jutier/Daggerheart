@@ -8,6 +8,8 @@ import useCard from "../../contexts/CardContext.ts";
 import { useState } from "react";
 import Field from "../atoms/Field.tsx";
 import { PiListPlus } from "react-icons/pi";
+import { TiMinus } from "react-icons/ti";
+
 
 const Category = styled.div`
 	font-weight: bold;
@@ -39,7 +41,7 @@ const FeatDesc = styled.span`
 	word-break: break-word;
 `;
 
-const FeatButton = styled.button`
+const FeatAddButton = styled.button`
 	display: flex;
 	background-color: var(--color-bg);
 	color: var(--color-text);
@@ -62,6 +64,32 @@ const FeatButton = styled.button`
 	&:active {
 		color: var(--color-accent-1);
 		transform: scale(0.95);
+	}
+`;
+
+const FeatRemoveButton = styled.button`
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.8rem;
+	color: var(--color-text);
+	border: 3px solid var(--color-minus);
+	width: 1.2rem;
+	height: 1.2rem;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: none;
+	cursor: pointer;
+	margin: 0 4px;
+	padding: 0;
+	transition: all 0.2s ease-out;
+
+	&:hover {
+		color: var(--color-minus);
+	}
+
+	&:active {
+		transform: scale(0.96);
 	}
 `;
 
@@ -204,7 +232,7 @@ function CardAdversary() {
 								placeholder={t("cardAdversary.placeholders.atkRange")}
 							/>
 						) : (
-							<span>{localCopy.atkName}</span>
+							<span>{localCopy.atkRange}</span>
 						)} - {isEditing ? (
 							<Field
 								width="5rem"
@@ -356,12 +384,24 @@ function CardAdversary() {
 							) : (
 								<FeatName>{localCopy.feats[index].name}</FeatName>
 							)}: {isEditing ? (
-								<Field
-									width="18rem"
-									value={localCopy.feats[index].desc}
-									onChange={(event) => handleFieldChange("feat", "desc", event.target.value, index)}
-									placeholder={t("cardAdversary.placeholders.featDesc")}
-								/>
+								<>
+									<Field
+										width="15.5rem"
+										value={localCopy.feats[index].desc}
+										onChange={(event) => handleFieldChange("feat", "desc", event.target.value, index)}
+										placeholder={t("cardAdversary.placeholders.featDesc")}
+									/>
+									<FeatRemoveButton
+										onClick={
+											() => setLocalCopy((prev) => ({
+												...prev,
+												feats: prev.feats.filter((_, i) => i !== index)
+											})
+										)}
+									>
+										<TiMinus/>
+									</FeatRemoveButton>
+								</>
 							) : (
 								<FeatDesc>{localCopy.feats[index].desc}</FeatDesc>
 							)}
@@ -370,7 +410,7 @@ function CardAdversary() {
 				</>
 			)}
 			{isEditing && (
-				<FeatButton 
+				<FeatAddButton 
 					onClick={() => {
 						setLocalCopy((prev) => ({
 							...prev, feats: [...(prev.feats || []), { name: "", desc: "" }]
@@ -378,7 +418,7 @@ function CardAdversary() {
 					}}
 				>
 					<PiListPlus size={25} style={{verticalAlign: "center"}}/> {t("cardAdversary.feats")}
-				</FeatButton>
+				</FeatAddButton>
 			)}
 		</Card>
 	);
