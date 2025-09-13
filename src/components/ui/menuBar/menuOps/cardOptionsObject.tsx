@@ -6,6 +6,8 @@ import { GiSettingsKnobs } from "react-icons/gi";
 import { IoCalculator } from "react-icons/io5";
 import { GiSwordClash } from "react-icons/gi";
 import { GiDropWeapon } from "react-icons/gi";
+import { TbClockSearch } from "react-icons/tb";
+import { TbClockHour8 } from "react-icons/tb";
 import { GiTombstone } from "react-icons/gi";
 import { GiRollingDices } from "react-icons/gi";
 import { PiLadder } from "react-icons/pi";
@@ -44,6 +46,8 @@ const Attributes = makeComponent("cardAttributes.title", <GiSettingsKnobs size={
 const BattlePoints = makeComponent("cardBattlePoints.title", <IoCalculator size={30} style={{ margin: "0 5px" }}/>);
 const Combat = makeComponent("cardCombat.title", <GiSwordClash size={30} style={{ margin: "0 5px" }}/>);
 const Conditions = makeComponent("cardConditions.title", <GiDropWeapon size={30} style={{ margin: "0 5px" }}/>);
+const Countdown = makeComponent("cardCountdown.title", <TbClockHour8 size={30} style={{ margin: "0 5px" }}/>);
+const CountdownRules = makeComponent("cardCountdownRules.title", <TbClockSearch size={30} style={{ margin: "0 5px" }}/>);
 const Death = makeComponent("cardDeath.title", <GiTombstone size={30} style={{ margin: "0 5px" }}/>);
 const DiceRoller = makeComponent("cardDiceRoller.title", <GiRollingDices size={30} style={{ margin: "0 5px" }}/>);
 const Difficulty = makeComponent("cardDifficulty.title", <PiLadder size={30} style={{ margin: "0 5px" }}/>);
@@ -74,6 +78,8 @@ export const cardOptionsObject = [
 	{ nameKey: "cardBattlePoints.title", call: "battlePoints", content: <BattlePoints/> },
 	{ nameKey: "cardCombat.title", call: "combat", content: <Combat/> },
 	{ nameKey: "cardConditions.title", call: "conditions", content: <Conditions/> },
+	{ nameKey: "cardCountdown.title", call: "countdown", content: <Countdown/> },
+	{ nameKey: "cardCountdownRules.title", call: "countdownRules", content: <CountdownRules/> },
 	{ nameKey: "cardDeath.title", call: "death", content: <Death/> },
 	{ nameKey: "cardDiceRoller.title", call: "diceRoller", content: <DiceRoller/> },
 	{ nameKey: "cardDifficulty.title", call: "difficulty", content: <Difficulty/> },

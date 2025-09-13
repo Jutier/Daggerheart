@@ -5,6 +5,8 @@ import CardAttributes from "./CardAttributes";
 import CardBattlePoints from "./CardBattlePoints";
 import CardCombat from "./CardCombat";
 import CardConditions from "./CardConditions";
+import CardCountdown from "./CardCountdown";
+import CardCountdownRules from "./CardCountdownRules";
 import CardDeath from "./CardDeath";
 import CardDiceRoller from "./CardDiceRoller";
 import CardDifficulty from "./CardDifficulty";
@@ -36,6 +38,8 @@ const CardComponents: Record<string, React.FC<any>> = {
 	battlePoints: CardBattlePoints,
 	combat: CardCombat,
 	conditions: CardConditions,
+	countdown: CardCountdown,
+	countdownRules: CardCountdownRules,
 	death: CardDeath,
 	diceRoller: CardDiceRoller,
 	difficulty: CardDifficulty,
