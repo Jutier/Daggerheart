@@ -155,6 +155,47 @@
 		"vulnerable": "<strong>Vulnerável:</strong> Rolagens têm vantagem contra você",
 		"restrained": "<strong>Restringido:</strong> Não pode se mover, apenas agir"
 	},
+	"cardCountdown": {
+		"title": "Contador"
+	},
+	"cardCountdownRules": {
+		"title": "Regras de Contagem",
+
+		"countdowns": "Representa tempo ou eventos, ela começa em um valor inicial e ativa algo quando chega a 0.",
+		"advanced": "Existem funcionalidades avançadas, como avançar a contagem durante descansos, ao invés de ações.",
+		"standard": "<strong>Padrão:</strong> Avança em ações de jogadores.",
+		"dynamic": "<strong>Dinâmica:</strong> Pode ter efeitos <em>positivos</em> ou <em>negativos</em>, avançando de acordo com a seguinte tabela:",
+	"head": {
+		"rollResult": "Rolagem",
+		"positive": "Positivo",
+		"negative": "Negativo"
+	},
+	"failFear": {
+		"rollResult": "<fear>Falha</fear>",
+		"positive": "---",
+		"negative": "Avança 3"
+	},
+	"failHope": {
+		"rollResult": "<hope>Falha</hope>", 
+		"positive": "---",
+		"negative": "Avança 2"
+	},
+	"successFear": {
+		"rollResult": "<fear>Sucesso</fear>",
+		"positive": "Avança 1",
+		"negative": "Avança 1"
+	},
+	"successHope": {
+		"rollResult": "<hope>Sucesso</hope>",
+		"positive": "Avança 2", 
+		"negative": "---"
+	},
+	"crit": {
+		"rollResult": "<crit>Crítico</crit>",
+		"positive": "Avança 3",
+		"negative": "---"
+	}
+},
 	"cardDeath": {
 		"title": "Ações de Morte",
 

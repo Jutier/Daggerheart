@@ -155,6 +155,47 @@
 		"vulnerable": "<strong>Vulnerable:</strong> Enemies have advantage against you",
 		"restrained": "<strong>Restrained:</strong> Can't move, but you can stil act"
 	},
+	"cardCountdown": {
+		"title": "Countdown"
+	},
+	"cardCountdownRules": {
+		"title": "Countdown Rules",
+
+		"countdowns": "A countdown represents time or events, it begins at a starting value and triggers something at 0.",
+		"advanced": "There are several advanced features, for example, advancing a countdown at rests, instead of actions.",
+		"standard": "<strong>Standard:</strong> Advances when a player takes an action.",
+		"dynamic": "<strong>Dynamic:</strong> Can have <em>positive</em> or <em>negative</em> effects, advances according to the following table:",
+		"head": {
+			"rollResult": "Roll",
+			"positive": "Positive",
+			"negative": "Negative"
+		},
+		"failFear": {
+			"rollResult": "<fear>Fail</fear>",
+			"positive": "---",
+			"negative": "Tick down 3"
+		},
+		"failHope": {
+			"rollResult": "<hope>Fail</hope>", 
+			"positive": "---",
+			"negative": "Tick down 2"
+		},
+		"successFear": {
+			"rollResult": "<fear>Success</fear>",
+			"positive": "Tick down 1",
+			"negative": "Tick down 1"
+		},
+		"successHope": {
+			"rollResult": "<hope>Success</hope>",
+			"positive": "Tick down 2", 
+			"negative": "---"
+		},
+		"crit": {
+			"rollResult": "<crit>Critical</crit>",
+			"positive": "Tick down 3",
+			"negative": "---"
+		}
+	},
 	"cardDeath": {
 		"title": "Death Actions",
 
