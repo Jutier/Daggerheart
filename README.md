@@ -12,15 +12,6 @@
 
 ---
 
-### Planned Updates
-
-Some features I would like to add, but I haven't yet figured out a good way to implement:
-
-- [ ] Character Sheets
-- [ ] MD/BBCode support within Text Card
-
----
-
 ## Usage
 
 You can access the app [here](https://jutier.github.io/Daggerheart/).
@@ -56,6 +47,26 @@ Then open your browser at the address shown in your terminal.
 5. No login or data collection.
 6. Save your board locally, on your browser or device.
 7. Responsive UI for smaller devices.
+
+
+### Planned Updates
+
+Some features I'll be adding as I find time to work on them.
+
+- [x] Countdown Card (v1.1.0)
+- [ ] Homepage with latest updates
+- [ ] Multiple Boards stored in localStorage
+- [ ] Automatic Board saving
+- [ ] Character / Party Tracker
+- [ ] Revisit Card repositioning (drag and drop?)
+- [ ] Show "with Hope/Fear" on Dice Roller
+- [ ] Markdown or BBCode support (Text Card)
+- [ ] Better tutorials (video), covering minor undocumented features
+- [ ] Additional languages
+- [ ] New, simpler way to share feedback
+- [ ] Add and share community Adversary blocks
+
+Most of these came from user feedback (thank you, keep them coming!).
 
 ---
 
