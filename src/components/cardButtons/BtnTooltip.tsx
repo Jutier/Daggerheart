@@ -17,6 +17,7 @@ const StyledTip = styled.div<{ $visible: boolean }>`
 	padding: 6px 10px;
 	border-radius: 8px;
 	font-size: 0.75rem;
+	font-family: var(--font-body);
 	white-space: nowrap;
 
 	opacity: ${({ $visible }) => ($visible ? 1 : 0)};
